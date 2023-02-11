@@ -1,29 +1,30 @@
 import styled from "styled-components";
 
 type SectionProps = {
-    children: React.ReactNode;
-    height: string;
-    color: string;
-    fd: string;
-}
+  children: React.ReactNode;
+  height: string;
+  width: string;
+  color: string;
+  fd: string;
+};
 
+const Section = ({ children, height, width, color, fd }: SectionProps) => {
+  return (
+    <Wrapper width={width} height={height} color={color} fd={fd}>
+      {children}
+    </Wrapper>
+  );
+};
 
-const Section = ({ children, height, color, fd }:SectionProps ) => {
-    const Wrapper = styled.div`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: ${fd};
-        background-color: ${color};
-        width: 100vw;
-        height: ${height};
-        padding: 0;
-    `
-    return (
-        <Wrapper>
-            {children}
-        </Wrapper>
-    )
-}
+const Wrapper = styled.section<SectionProps>`
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  flex-direction: ${({ fd }) => fd};
+  background-color: ${({ color }) => color};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  padding: 0;
+`;
 
 export default Section;

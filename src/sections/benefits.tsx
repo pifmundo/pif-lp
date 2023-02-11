@@ -27,7 +27,7 @@ const Benefit = styled.div`
 
 const Benefits = () => {
   return (
-    <Section height="60rem" color="#000" fd="column">
+    <Section width="100vw" height="60rem" color="#000" fd="column">
       <div
         style={{
             display: "flex",

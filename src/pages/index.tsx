@@ -1,10 +1,8 @@
 import Head from "next/head";
 import Header from "@/components/Header";
-import Section from "@/components/Section";
 import Banner from "@/sections/banner";
 import { createTheme } from "@mui/material/styles";
-import Benefits from "@/sections/benefits";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const theme = createTheme({
   palette: {
@@ -24,15 +22,15 @@ const theme = createTheme({
 });
 
 export default function Home() {
-  const [hasScrolled, setHasScrolled] = useState(false);
+//   const [hasScrolled, setHasScrolled] = useState(false);
 
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    setHasScrolled(offset > 80);
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+//   const handleScroll = () => {
+//     const offset = window.scrollY;
+//     setHasScrolled(offset > 80);
+//   };
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+//   }, []);
 
   return (
     <>
@@ -43,9 +41,9 @@ export default function Home() {
       <Header />
 
       <Banner />
+      {/* <Banner />
       <Banner />
-      <Banner />
-
+ */}
       {/* <Benefits /> */}
     </>
   );

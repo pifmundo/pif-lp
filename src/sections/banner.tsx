@@ -1,49 +1,9 @@
 import Button from "@/components/Button";
 import Section from "@/components/Section";
-import { css, fontSize } from "@mui/system";
+import { css } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
-const Text = styled.h1`
-  display: inline-block;
-  font-size: 7.5rem;
-  text-align: center;
-  font-weight: 700;
-  margin: 0;
-  width: 100%;
-  animation: gradient 8s ease-in-out infinite;
-  background: linear-gradient(
-    48deg,
-    #ea5308 0%,
-    rgba(253, 221, 0, 1) 50%,
-    rgba(228, 117, 5, 1) 100%
-  );
-  animation-delay: var(delay);
-  -webkit-text-fill-color: white;
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  @keyframes gradient {
-    0%,
-    50% {
-      background-position: 0% 50%;
-      -webkit-text-fill-color: white;
-    }
-    100% {
-      -webkit-text-fill-color: transparent;
-      background-position: 100% 50%;
-    }
-  }
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: middle;
-  width: 100%;
-`;
 const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(false);
 
@@ -60,166 +20,165 @@ const useMediaQuery = (query: string): boolean => {
 
   return matches;
 };
+
 const Banner = () => {
-    const animateButton = css`
-    from {
-        background-position: 0% 50%;
-    }
-    to {
-        background-position: 100% 50%;
-    }
-`;
-
-  const isNonMobileScreen = useMediaQuery("(min-width: 800px)");
-
-  const [isHovered, setHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
+  const ScreenSizeBool = useMediaQuery("(min-width: 1000px)");
 
   return (
-    <Section height="80vh" color="#010101" fd="column">
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "0",
-          width: "100vw",
-          height: "100%",
-        }}
-      >
-        <Text
-          style={{
-            fontSize: isNonMobileScreen ? "7.5rem" : "5rem",
-            animationDelay: "0s",
-          }}
-        >
+    <Section height="60rem" width="100%" color="#010101" fd="column">
+      <TextWrapper displaySize={ScreenSizeBool}>
+        <Text displaySize={ScreenSizeBool} animationDelay={0}>
           Transforme.
         </Text>
-        <Text
-          style={{
-            fontSize: isNonMobileScreen ? "7.5rem" : "5rem",
-            animationDelay: "2.5s",
-          }}
-        >
+        <Text displaySize={ScreenSizeBool} animationDelay={2.5}>
           Otimize.
         </Text>
-        <Text
-          style={{
-            fontSize: isNonMobileScreen ? "7.5rem" : "5rem",
-            animationDelay: "5s",
-          }}
-        >
+        <Text displaySize={ScreenSizeBool} animationDelay={5}>
           Cresça.
         </Text>
-        <div
-          style={{
-            width: isNonMobileScreen ? "40%" : "50%",
-            marginTop: "4rem",
-            color: "gray",
-            fontSize: isNonMobileScreen ? "2rem" : "1.3rem",
-            textAlign: "center",
-          }}
-        >
-          Transforme sua empresa com o toque de Midas. Nós somos uma assessoria
-          de marketing altamente capacitada para maximizar suas vendas a apenas
-          um clique.
-        </div>
-      </div>
-      <ButtonWrapper>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: isNonMobileScreen ? "row" : "column",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "0 10% 0 10%",
-            width: "100%",
-            marginTop: "0",
-          }}
-        >
-          <Button
-            style={{
-              margin: isNonMobileScreen ? "0 10px 0 10px" : "0 0 10px 0",
-              display: "block",
-              backgroundColor: "#fff",
-              color: "#000",
-              fontSize: "1.5rem",
-              fontWeight: 500,
-
-              borderRadius: "0.5rem",
-              cursor: "pointer",
-              height: "7vh",
-              width: isNonMobileScreen ? "20rem" : "100%",
-              border: "none",
-              backgroundImage: isHovered
-                ? "linear-gradient(315deg, #ea5308 0%, #f5d100 74%)"
-                : "none",
-
-            //animate button
-              animation: `${animateButton} 2s ease-in-out infinite alternate`,
-              boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)",
-              //make the background move
-            //   backgroundPosition: "0 0",
-            }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            Clique aqui
-          </Button>
-          <button
-            style={{
-              display: "inline-block",
-              height: "7vh",
-              borderRadius: "50%",
-              fontSize: "1.25rem",
-              fontWeight: "700",
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              background: "black",
-              border: "0.15rem solid",
-              width: isNonMobileScreen ? "20rem" : "100%",
-              color: "#fff",
-              borderImage:
-                "linear-gradient(to right, rgba(255, 240, 98, 1) 0%, rgba(253, 221, 0, 1) 50%, rgba(253, 174, 0, 1) 100%) 1",
-              boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)",
-              animation: "shine 2s ease-in-out infinite alternate",
-              cursor: "pointer",
-            }}
-          >
-            Clique aqui
-          </button>
-
-          {/* <Button
-            style={{
-              margin: isNonMobileScreen ? "0 10px 0 10px" : "0 0 10px 0",
-              display: "block",
-              cursor: "pointer",
-              height: "7vh",
-              width: isNonMobileScreen ? "20rem" : "100%",
-              backgroundColor: "#000",
-              color: "#fff",
-              fontSize: "1.5rem",
-              fontWeight: 500,
-              borderRadius: "0.5rem",
-              borderWidth: "0.5rem",
-              background: "linear-gradient(48deg, #ea5308 0%, rgba(253, 221, 0, 1) 50%, rgba(228, 117, 5, 1) 100%)",
-              backgroundClip: "border-box",
-                WebkitBackgroundClip: "text",
-            }}
-          >
-            Clique aqui
-          </Button> */}
-        </div>
+        <BrandDescription displaySize={ScreenSizeBool}>
+          Transforme sua empresa com o toque de Midas.
+          {ScreenSizeBool &&
+            "  Somos a assessoria de marketing capacitada para maximizar suas vendas a apenas um clique."}
+        </BrandDescription>
+      </TextWrapper>
+      <ButtonWrapper displaySize={ScreenSizeBool}>
+        <WhiteButton
+          displaySize={ScreenSizeBool} >
+          Clique aqui
+        </WhiteButton>
+        <ColoredButton displaySize={ScreenSizeBool}>Clique aqui</ColoredButton>
       </ButtonWrapper>
     </Section>
   );
 };
+const Gradient = keyframes`
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+`;
+const TextWrapper = styled.div<{ displaySize: boolean }>`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: ${({ displaySize = true }) =>
+    displaySize ? "1rem" : "2rem"}; */
+  margin-top: "2rem";
+`;
+const Text = styled.h1<{ displaySize: boolean; animationDelay: number }>`
+  width: 100%;
+  font-size: ${({ displaySize = true }) => (displaySize ? "7.5rem" : "17vw")};
+  text-align: center;
+  font-weight: 700;
+  height: ${({ displaySize = true }) => (displaySize ? "8.2rem" : "11vh")};
+  animation: gradient 8s ease-in-out infinite;
+  background: linear-gradient(
+    48deg,
+    #ea5308 20%,
+    rgba(253, 221, 0, 1) 50%,
+    rgba(228, 117, 5, 1) 90%
+  );
+  animation-delay: ${({ animationDelay = 0 }) => animationDelay}s;
+  -webkit-text-fill-color: white;
+  background-clip: text;
+  -webkit-background-clip: text;
 
+  @keyframes gradient {
+    0%,
+    50% {
+        text-shadow: none;
+        -webkit-text-fill-color: white;
+    }
+    80% {
+        -webkit-text-fill-color: transparent;
+        background-position: 0% 100%;
+    }
+    90% {
+        text-shadow: 0 0 0.4rem #fddd00, 0 0 1.2rem #ea5308;
+        //reduce the opacity of text-shadow
+        -webkit-text-fill-color: rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        text-shadow: none;
+      background-position: 100% 0%;
+    }
+  }
+`;
+const BrandDescription = styled.p<{ displaySize: boolean }>`
+  color: #555;
+  text-align: center;
+  letter-spacing: 0.03rem;
+  font-weight: 400;
+  font-size: ${({ displaySize = true }) => (displaySize ? "1.4rem" : "5vw")};
+  width: ${({ displaySize = true }) => (displaySize ? "50%" : "90%")};
+  margin-top: ${({ displaySize = true }) => (displaySize ? "2rem" : "2rem")};
+`;
+
+const ButtonWrapper = styled.div<{ displaySize: boolean }>`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: ${({ displaySize = true }) =>
+    displaySize ? "row" : "column"};
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  width: 100%;
+`;
+
+const WhiteButton = styled.button<{ displaySize: boolean }>`
+  height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3rem")};
+
+  width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
+
+  margin: ${({ displaySize = true }) =>
+    displaySize ? "1rem 1rem 1rem 1rem" : "0 0 1rem 0"};
+
+  color: #000;
+  border: 0.12rem solid #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+  }
+`;
+const ColoredButton = styled.button<{ displaySize: boolean }>`
+  height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3rem")};
+
+  width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
+
+  margin: ${({ displaySize = true }) =>
+    displaySize ? "1rem 1rem 1rem 1rem" : "0 0 1rem 0"};
+
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 0.12rem solid #fff;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(
+    40deg,
+    #ea7908 0%,
+    rgba(253, 221, 0, 1) 40%,
+    rgba(253, 221, 0, 1) 60%,
+    rgba(228, 117, 5, 1) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 80% 70%;
+    animation: ${Gradient} 20s ease-in-out  alternate infinite;
+`;
 export default Banner;

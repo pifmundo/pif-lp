@@ -5,27 +5,25 @@ import styled from "styled-components";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 
 const NavLinkWrapper = styled.div`
-  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
-  margin: 0;
+  margin: 0 15rem 0 15rem;
+  width: 20%;
   height: 100%;
 `;
 const HeaderContainer = styled.header`
-  /* -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    opacity: 0.9; */
+  opacity: 0.9;
   position: sticky;
   top: 0;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 25vw 0 25vw;
+  justify-content: center;
+  margin: 0;
   background-color: #000;
-  width: auto;
-  height: 6vh;
+  width: 100%;
+  height: 5rem;
 `;
 const MobileHeaderContainer = styled.header`
   display: flex;
@@ -33,8 +31,9 @@ const MobileHeaderContainer = styled.header`
   align-items: center;
   background-color: #000;
   padding: 0;
-  width: 100vw;
-  height: 7vh;
+  margin: 0;
+  width: 100%;
+  height: 7rem;
 `;
 
 const useMediaQuery = (query: string): boolean => {
