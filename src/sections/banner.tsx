@@ -123,7 +123,7 @@ const ButtonWrapper = styled.div<{ displaySize: boolean }>`
 `;
 
 const WhiteButton = styled.button<{ displaySize: boolean }>`
-  height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3rem")};
+  height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3.4rem")};
 
   width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
 
@@ -143,14 +143,8 @@ const WhiteButton = styled.button<{ displaySize: boolean }>`
     border-color: #fff;
   }
 `;
-const Shadow = styled.div<{ displaySize: boolean }>`
-  position: relative;
-  border-radius: 0.5rem;
-
-  background-color: #ff0000;
-  `;
 const ColoredButton = styled.button<{ displaySize: boolean }>`
-height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3rem")};
+height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3.4rem")};
 
 width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
 
@@ -162,11 +156,10 @@ margin: ${({ displaySize = true }) =>
   border: 1rem solid rgba(255, 0, 0, 0);
   //make border clear
 
-  box-shadow: 0 0 0.8rem #fddd00, 0 0 0.5rem #000, 0 0 1.3rem #ea5308, 0 0 1.5rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0.8rem #fddd00, 0 0 1.3rem #ea5308, 0 0 1.5rem rgba(0, 0, 0, 0.5);
   //make a big bright shadow like its burning
   /* box-shadow: 0 0 0.4rem #fddd00, 0 0 1.2rem #ea5308, 0 0 20rem #511e04; */
   border-radius: 0.5rem;
-  animation: none;
   background-image: none;
   background-color: #000;
   &:hover {

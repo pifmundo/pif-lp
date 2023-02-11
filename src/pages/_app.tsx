@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import "@/styles/globals.css";
 import { ThemeProvider } from "styled-components";
 import type { AppProps } from "next/app";
@@ -14,6 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={{}}>
       <main className={roboto.className}>
         <Component {...pageProps} />
+        {/* <Analytics id="G-2JQZQZJZ2G" /> */}
+        <Analytics />
       </main>
     </ThemeProvider>
   );
