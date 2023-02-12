@@ -4,38 +4,6 @@ import NavLink from "@/components/NavLink";
 import styled from "styled-components";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 
-const NavLinkWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 15rem 0 15rem;
-  width: 20%;
-  height: 100%;
-`;
-const HeaderContainer = styled.header`
-  opacity: 0.9;
-  position: sticky;
-  top: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  background-color: #000;
-  width: 100%;
-  height: 5rem;
-`;
-const MobileHeaderContainer = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 7rem;
-`;
-
 const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(false);
 
@@ -59,17 +27,17 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
       <NavLinkWrapper>
-        <NavLink color="gray" padding="1rem" to="/about">
+        <NavLink padding="1rem" to="/about">
           About
         </NavLink>
-        <NavLink color="gray" padding="1rem" to="/contact">
+        <NavLink padding="1rem" to="/contact">
           Contact
         </NavLink>
-        <NavLink color="gray" padding="1rem" to="/login">
+        <NavLink padding="1rem" to="/login">
           Login
         </NavLink>
       </NavLinkWrapper>
-      <DragHandleIcon style={{ color: "white", fontSize: "2rem" }} />
+      <DragHandle />
     </HeaderContainer>
   ) : (
     <MobileHeaderContainer>
@@ -77,5 +45,41 @@ const Header = () => {
     </MobileHeaderContainer>
   );
 };
+
+const DragHandle = styled(DragHandleIcon)`
+  color: #fff;
+  font-size: 2rem;
+`;
+
+const NavLinkWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 15rem 0 15rem;
+  width: 20%;
+  height: 100%;
+`;
+const HeaderContainer = styled.header`
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: ${(p) => p.theme.primary};
+  width: 100%;
+  height: 5rem;
+`;
+const MobileHeaderContainer = styled.header`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(p) => p.theme.primary};
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 7rem;
+`;
 
 export default Header;

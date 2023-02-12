@@ -1,8 +1,6 @@
-import Button from "@/components/Button";
-import Section from "@/components/Section";
-import { css } from "@mui/system";
+import Router from "next/router";
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, ThemeProvider } from "styled-components";
 
 const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(false);
@@ -21,11 +19,14 @@ const useMediaQuery = (query: string): boolean => {
   return matches;
 };
 
-const Banner = () => {
-  const ScreenSizeBool = useMediaQuery("(min-width: 1000px)");
+type BannerProps = {
+  themeSwitch: () => void;
+};
 
+const Banner = ({ themeSwitch }: BannerProps) => {
+  const ScreenSizeBool = useMediaQuery("(min-width: 1000px)");
   return (
-    <Section height="60rem" width="100%" color="#010101" fd="column">
+    <Section>
       <TextWrapper displaySize={ScreenSizeBool}>
         <Text displaySize={ScreenSizeBool} animationDelay={"0s"}>
           Transforme.
@@ -43,14 +44,26 @@ const Banner = () => {
         </BrandDescription>
       </TextWrapper>
       <ButtonWrapper displaySize={ScreenSizeBool}>
-        <WhiteButton displaySize={ScreenSizeBool}>Conheça a Midas</WhiteButton>
-          <ColoredButton displaySize={ScreenSizeBool}>
-            Alavanque seu negócio
-          </ColoredButton>
+        <WhiteButton displaySize={ScreenSizeBool} onClick={themeSwitch}>
+          Conheça a Midas
+        </WhiteButton>
+        <ColoredButton displaySize={ScreenSizeBool} onClick={themeSwitch}>
+          Alavanque seu negócio
+        </ColoredButton>
       </ButtonWrapper>
     </Section>
   );
 };
+const Section = styled.section`
+  height: 60rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  flex-direction: column;
+  background-color: ${(p) => p.theme.primary};
+  padding: 0;
+`;
 const TextWrapper = styled.div<{ displaySize: boolean }>`
   width: 100%;
   height: ${({ displaySize = true }) => (displaySize ? "50%" : "85vw")};
@@ -78,31 +91,37 @@ const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   -webkit-background-clip: text;
 
   //animate
-
+  transition: transform 0.01s linear;
   animation: textGradient 6s ${({ animationDelay = 0 }) => animationDelay}
     ease-in-out infinite;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: ${(p) => p.theme.text};
   @keyframes textGradient {
     0% {
-      -webkit-text-fill-color: white;
+      -webkit-text-fill-color: ${(p) => p.theme.text};
     }
-    50% {
-      -webkit-text-fill-color: white;
+    30% {
     }
-    60% {
-      -webkit-text-fill-color: transparent;
+    40% {
+      -webkit-text-fill-color: ${(p) => p.theme.text};
+      //make it bigger
       background-position: 0% 100%;
+      transform: scale(1);
     }
-    90% {
+    70% {
+    }
+    75% {
+      transform: scale(1.005);
+      -webkit-text-fill-color: transparent;
       background-position: 100% 100%;
     }
     100% {
-      background-position: 100% 0%;
+      transform: scale(1);
+      background-position: 0% 0%;
     }
   }
 `;
 const BrandDescription = styled.p<{ displaySize: boolean }>`
-  color: #555;
+  color: ${(p) => p.theme.main};
   text-align: center;
   letter-spacing: 0.03rem;
   font-weight: 400;
@@ -130,41 +149,42 @@ const WhiteButton = styled.button<{ displaySize: boolean }>`
   margin: ${({ displaySize = true }) =>
     displaySize ? "1rem 1rem 1rem 1rem" : "0 0 1rem 0"};
 
-  color: #000;
-  border: 0.12rem solid #fff;
+  color: ${(p) => p.theme.primary};
+  border: 0.12rem solid ${(p) => p.theme.text};
   font-weight: 600;
   font-size: 1.1rem;
-  background-color: #fff;
+  background-color: ${(p) => p.theme.text};
   border-radius: 0.5rem;
 
   &:hover {
-    background-color: #000;
-    color: #fff;
-    border-color: #fff;
+    background-color: ${(p) => p.theme.primary};
+    color: ${(p) => p.theme.text};
   }
 `;
 const ColoredButton = styled.button<{ displaySize: boolean }>`
-height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3.4rem")};
+  height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3.4rem")};
 
-width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
+  width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
 
-margin: ${({ displaySize = true }) =>
-  displaySize ? "1rem 1rem 1rem 1rem" : "0 0 1rem 0"};
-  color: #fff;
+  margin: ${({ displaySize = true }) =>
+    displaySize ? "1rem 1rem 1rem 1rem" : "0 0 1rem 0"};
+  color: ${(p) => p.theme.text};
   font-weight: 600;
   font-size: 1.1rem;
-  border: 1rem solid rgba(255, 0, 0, 0);
+  border: 0.15rem solid #fddd00;
   //make border clear
 
-  box-shadow: 0 0 0.8rem #fddd00, 0 0 1.3rem #ea5308, 0 0 1.5rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0.8rem #fddd00, 0 0 1.3rem #ea5308,
+    0 0 1.5rem rgba(0, 0, 0, 0.5);
   //make a big bright shadow like its burning
   /* box-shadow: 0 0 0.4rem #fddd00, 0 0 1.2rem #ea5308, 0 0 20rem #511e04; */
   border-radius: 0.5rem;
   background-image: none;
-  background-color: #000;
+  background-color: ${(p) => p.theme.primary};
+  transition: all 0.5s ease-in-out;
   &:hover {
     border: none;
-    color: #000;
+    color: ${(p) => p.theme.primary};
     //animate gradient
     background-size: 400% 400%;
     background-color: #fddd00;
@@ -198,18 +218,21 @@ margin: ${({ displaySize = true }) =>
       background-position: 0% 0%;
     }
   }
-    @keyframes hot {
-    0% {
-        background-color: #fddd00;
+  @keyframes hot {
+    20% {
+      background-color: #fddd00;
     }
-    90% {
+    50% {
+        color: ${(p) => p.theme.primary};
     }
     100% {
-        //make a fire effect with multiple shadows at least 10
-        background-color: #fff;
-        background-image: none;
-        box-shadow: 0 0 1rem yellow, 0 0 1.5rem orange, 0 0 2rem red, 0 0 2.5rem red, 0 0 2rem orange, 0 0 3rem yellow;
+      //make a fire effect with multiple shadows at least 10
+      color: #000;
+      background-color: #fff;
+      background-image: none;
+      box-shadow: 0 0 1.5rem #fddd00, 0 0 1.2rem #fddd00, 0 0 2rem #f00,
+        0 0 2.5rem red, 0 0 2rem orange, 0 1rem 5rem yellow;
     }
-    }
+  }
 `;
 export default Banner;

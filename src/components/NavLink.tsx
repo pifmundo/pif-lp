@@ -2,32 +2,29 @@ import Link from "next/link";
 import styled from "styled-components";
 
 type NavLinkProps = {
-  color: string;
   padding: string;
   to: string;
   children: React.ReactNode;
 };
 
-const NavLink = ({ color = "black", padding, to, children }: NavLinkProps) => {
-  const Wrapper = styled.div`
-    padding: ${padding};
-  `;
+const NavLink = ({ padding, to, children }: NavLinkProps) => {
   return (
-    <Wrapper>
-      <Link
-        href={to}
-        style={{
-          font: "inherit",
-          fontWeight: 400,
-          fontSize: "1.2rem",
-          color: color,
-          textDecoration: "none",
-        }}
-      >
+    <Wrapper padding={padding}>
+      <StyledLink href={to}>
         {children}
-      </Link>
+      </StyledLink>
     </Wrapper>
   );
 };
+const StyledLink = styled(Link)`
+    font: inherit;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: ${(p) => p.theme.main};
+    text-decoration: none;
+`;
+const Wrapper = styled.div<{ padding: string }>`
+  padding: ${(e) => e.padding};
+`;
 
 export default NavLink;

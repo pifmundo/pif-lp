@@ -1,50 +1,63 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Banner from "@/sections/banner";
-import { createTheme } from "@mui/material/styles";
-// import { useEffect, useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { useState } from "react";
+// import * as theme from "../styles/Theme.styled";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#111",
-      dark: "#000",
-      contrastText: "#fddd00",
-      light: "#fff",
-    },
-    secondary: {
-      main: "#bbb",
-      dark: "#fff",
-      contrastText: "#fddd00",
-      light: "#000",
-    },
-  },
-});
+const darkTheme = {
+  primary: "#000",
+  secondary: "#fff",
+  main: "#555",
+  text: "#fff",
+  alt: "#fddd00",
+};
+
+const lightTheme = {
+  primary: "#fff",
+  secondary: "#000",
+  main: "#666",
+  text: "#000",
+  alt: "#fddd00",
+};
 
 export default function Home() {
-//   const [hasScrolled, setHasScrolled] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState(darkTheme);
+    // const theme = useTheme();
 
-//   const handleScroll = () => {
-//     const offset = window.scrollY;
-//     setHasScrolled(offset > 80);
-//   };
-//   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll);
-//   }, []);
+    const themeSwitch = () => {
+        setSelectedTheme(selectedTheme === lightTheme ? darkTheme : lightTheme);
+    }
+  //   const [hasScrolled, setHasScrolled] = useState(false);
+
+  //   const handleScroll = () => {
+  //     const offset = window.scrollY;
+  //     setHasScrolled(offset > 80);
+  //   };
+  //   useEffect(() => {
+  //     window.addEventListener("scroll", handleScroll);
+  //   }, []);
 
   return (
     <>
-      <Head>
-        <title>Midas</title>
-      </Head>
+      <ThemeProvider theme={selectedTheme}>
+        <Head>
+          <title>Midas</title>
+        </Head>
 
-      <Header />
+        <Header />
 
+        <Banner
+            themeSwitch={() => {
+                console.log(selectedTheme);
+                themeSwitch();
+            }}
+        />
+        {/* <Banner />
       <Banner />
-      {/* <Banner />
-      <Banner />
- */}
-      {/* <Benefits /> */}
+    */}
+        {/* <Benefits /> */}
+      </ThemeProvider>
     </>
   );
 }
