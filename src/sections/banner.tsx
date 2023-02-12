@@ -24,9 +24,9 @@ type BannerProps = {
 };
 
 const Banner = ({ themeSwitch }: BannerProps) => {
-  const ScreenSizeBool = useMediaQuery("(min-width: 1000px)");
+  const ScreenSizeBool = useMediaQuery("(min-width: 768px)");
   return (
-    <Section>
+    <Section displaySize={ScreenSizeBool}>
       <TextWrapper displaySize={ScreenSizeBool}>
         <Text displaySize={ScreenSizeBool} animationDelay={"0s"}>
           Transforme.
@@ -44,18 +44,18 @@ const Banner = ({ themeSwitch }: BannerProps) => {
         </BrandDescription>
       </TextWrapper>
       <ButtonWrapper displaySize={ScreenSizeBool}>
-        <WhiteButton displaySize={ScreenSizeBool} onClick={themeSwitch}>
+        <WhiteButton displaySize={ScreenSizeBool} onClick={_ => Router.push("https://wa.link/ifyvwo")}>
           Conheça a Midas
         </WhiteButton>
-        <ColoredButton displaySize={ScreenSizeBool} onClick={themeSwitch}>
+        <ColoredButton displaySize={ScreenSizeBool} onClick={_ => Router.push("https://wa.link/ifyvwo")}>
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
     </Section>
   );
 };
-const Section = styled.section`
-  height: 60rem;
+const Section = styled.section<{ displaySize: boolean }>`
+  height: ${({ displaySize = true }) => (displaySize ? "50rem" : "95vh")};
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -66,14 +66,14 @@ const Section = styled.section`
 `;
 const TextWrapper = styled.div<{ displaySize: boolean }>`
   width: 100%;
-  height: ${({ displaySize = true }) => (displaySize ? "50%" : "85vw")};
+  height: ${({ displaySize = true }) => (displaySize ? "35rem" : "20rem")};
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   /* margin-top: ${({ displaySize = true }) =>
     displaySize ? "1rem" : "2rem"}; */
-  margin-top: "2rem";
+    padding: 0;
 `;
 const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   width: 100%;
@@ -147,7 +147,7 @@ const WhiteButton = styled.button<{ displaySize: boolean }>`
   width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
 
   margin: ${({ displaySize = true }) =>
-    displaySize ? "1rem 1rem 1rem 1rem" : "0 0 1rem 0"};
+    displaySize ? "1rem 1rem 0 1rem" : "0 0 0 0"};
 
   color: ${(p) => p.theme.primary};
   border: 0.12rem solid ${(p) => p.theme.text};
@@ -167,7 +167,7 @@ const ColoredButton = styled.button<{ displaySize: boolean }>`
   width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
 
   margin: ${({ displaySize = true }) =>
-    displaySize ? "1rem 1rem 1rem 1rem" : "0 0 1rem 0"};
+    displaySize ? "1rem 1rem 0 1rem" : "1rem 0 0 0"};
   color: ${(p) => p.theme.text};
   font-weight: 600;
   font-size: 1.1rem;

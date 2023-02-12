@@ -4,24 +4,23 @@ import NavLink from "@/components/NavLink";
 import styled from "styled-components";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 
-const useMediaQuery = (query: string): boolean => {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const mediaQueryList = window.matchMedia(query);
-    setMatches(mediaQueryList.matches);
-    const handleChange = (event: MediaQueryListEvent) =>
-      setMatches(event.matches);
-    mediaQueryList.addEventListener("change", handleChange);
-    return () => {
-      mediaQueryList.removeEventListener("change", handleChange);
-    };
-  }, [query]);
-
-  return matches;
-};
-
 const Header = () => {
+    const useMediaQuery = (query: string): boolean => {
+      const [matches, setMatches] = useState(false);
+    
+      useEffect(() => {
+        const mediaQueryList = window.matchMedia(query);
+        setMatches(mediaQueryList.matches);
+        const handleChange = (event: MediaQueryListEvent) =>
+          setMatches(event.matches);
+        mediaQueryList.addEventListener("change", handleChange);
+        return () => {
+          mediaQueryList.removeEventListener("change", handleChange);
+        };
+      }, [query]);
+    
+      return matches;
+    };
   const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
   return isNonMobileScreen ? (
     <HeaderContainer>
@@ -60,6 +59,8 @@ const NavLinkWrapper = styled.div`
   height: 100%;
 `;
 const HeaderContainer = styled.header`
+  opacity: 1;
+  border: none;
   position: sticky;
   top: 0;
   display: flex;

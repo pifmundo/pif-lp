@@ -21,15 +21,18 @@ time, mark, audio, video {
 }
 -webkit-scrollbar {
     display: none;
-  }
-  
+}
+
 html{
 }
+background-color: #f000;
 /* HTML5 display-role reset for older browsers */
 body {
-	line-height: 1;
+    background-color: #f000;
+    line-height: 1;
 }
 body::-webkit-scrollbar{
+    background-color: #f000;
     display: none;
   }
 ol, ul {

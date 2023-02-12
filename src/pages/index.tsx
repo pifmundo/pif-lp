@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Banner from "@/sections/banner";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { useState } from "react";
+import Benefits from "@/sections/benefits";
 // import * as theme from "../styles/Theme.styled";
 
 const darkTheme = {
@@ -40,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <ThemeProvider theme={selectedTheme}>
+      <ThemeProvider theme={selectedTheme} >
         <Head>
           <title>Midas</title>
         </Head>
@@ -53,10 +54,7 @@ export default function Home() {
                 themeSwitch();
             }}
         />
-        {/* <Banner />
-      <Banner />
-    */}
-        {/* <Benefits /> */}
+        <Benefits />
       </ThemeProvider>
     </>
   );
