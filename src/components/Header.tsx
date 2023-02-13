@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "@/components/Logo";
 import NavLink from "@/components/NavLink";
 import styled from "styled-components";

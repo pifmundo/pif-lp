@@ -4,6 +4,7 @@ import Banner from "@/sections/banner";
 import styled, { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import Benefits from "@/sections/benefits";
+import WhyToInvest from "@/sections/whyToInvest";
 // import * as theme from "../styles/Theme.styled";
 
 const darkTheme = {
@@ -55,6 +56,7 @@ export default function Home() {
             }}
         />
         <Benefits />
+        <WhyToInvest />
       </ThemeProvider>
     </>
   );

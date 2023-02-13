@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import BusinessIcon from "@mui/icons-material/Business";
-import StoreIcon from "@mui/icons-material/Store";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+// import BusinessIcon from "@mui/icons-material/Business";
+// import StoreIcon from "@mui/icons-material/Store";
+// import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import styled from "styled-components";
 
 // const useMediaQuery = (query: string): boolean => {
@@ -23,31 +23,49 @@ import styled from "styled-components";
 // };
 
 const Benefits = () => {
-//   const isNonMobileScreen = useMediaQuery("(min-width: 768px)");
-    const isNonMobileScreen = true;
+  //   const isNonMobileScreen = useMediaQuery("(min-width: 768px)");
+  const isNonMobileScreen = true;
   return (
-    <BenefitsContainer displaySize={isNonMobileScreen}>
-      <BenefitCard displaySize={isNonMobileScreen}>
-        <RocketLaunchIcon sx={{ fontSize: "4rem" }} />
-        Lançamento de campanhas digitais
-      </BenefitCard>
-      <BenefitCard displaySize={isNonMobileScreen}>
-        <BusinessIcon sx={{ fontSize: "4rem" }} />
-        Beneficio
-      </BenefitCard>
-      <BenefitCard displaySize={isNonMobileScreen}>
-        <StoreIcon sx={{ fontSize: "4rem" }} />
-        Encontre o melhor comprador para sua empresa
-      </BenefitCard>
-      <BenefitCard displaySize={isNonMobileScreen}>
-        <AttachMoneyIcon sx={{ fontSize: "3.5rem", margin:"0.1rem" }} />
-        Aumentar sua receita e lucratividade
-      </BenefitCard>
-    </BenefitsContainer>
+    <Wrapper>
+        <h1>Benefícios</h1>
+      <BenefitsContainer displaySize={isNonMobileScreen}>
+        <BenefitCard displaySize={isNonMobileScreen}>
+        <span className="material-symbols-outlined" style={{ fontSize: "6rem" }}>rocket_launch</span>
+          Lançamento de campanhas digitais
+        </BenefitCard>
+        <BenefitCard displaySize={isNonMobileScreen}>
+        <span className="material-symbols-outlined" style={{ fontSize: "6rem" }}>business_center</span>
+        Planejamento estratégico e branding
+        </BenefitCard>
+        <BenefitCard displaySize={isNonMobileScreen}>
+        <span className="material-symbols-outlined" style={{ fontSize: "6rem" }}>cycle</span>
+          Investimento que gera retorno que gera investimento. Um ciclo retroalimentado de crescimento. 
+        </BenefitCard>
+        <BenefitCard displaySize={isNonMobileScreen}>
+          <span
+            className="material-symbols-outlined"
+            style={{ fontSize: "6.5rem" }}
+          >
+            monitoring
+          </span>
+          Impulsionar seu negócio e maximizar suas vendas com estratégias
+          eficazes e inovadoras.
+        </BenefitCard>
+      </BenefitsContainer>
+    </Wrapper>
   );
 };
+const Wrapper = styled.div`
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+`;
 const BenefitCard = styled.div<{ displaySize: Boolean }>`
-  height: 20rem;
+  height: 15rem;
   width: ${({ displaySize = true }) => (displaySize ? "10%" : "80%")};
   background-color: ${(p) => p.theme.secondary};
   border-radius: 0.5rem;
@@ -56,9 +74,9 @@ const BenefitCard = styled.div<{ displaySize: Boolean }>`
     displaySize ? "0 1rem 0 1rem" : ".5rem 0 .5rem 0"};
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 1rem;
+  padding: 4rem 1rem 4rem 1rem;
   text-align: center;
 `;
 
