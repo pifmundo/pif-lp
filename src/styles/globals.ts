@@ -25,10 +25,10 @@ time, mark, audio, video {
 
 html{
 }
-background-color: #f000;
+background-color: #0000;
 /* HTML5 display-role reset for older browsers */
 body {
-    background-color: #f000;
+    background-color: #000;
     line-height: 1;
 }
 body::-webkit-scrollbar{

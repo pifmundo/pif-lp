@@ -27,19 +27,35 @@ const Benefits = () => {
   const isNonMobileScreen = true;
   return (
     <Wrapper>
-        <h1>Benefícios</h1>
+      <h1>Benefícios</h1>
       <BenefitsContainer displaySize={isNonMobileScreen}>
         <BenefitCard displaySize={isNonMobileScreen}>
-        <span className="material-symbols-outlined" style={{ fontSize: "6rem" }}>rocket_launch</span>
+          <span
+            className="material-symbols-outlined"
+            style={{ fontSize: "6rem" }}
+          >
+            rocket_launch
+          </span>
           Lançamento de campanhas digitais
         </BenefitCard>
         <BenefitCard displaySize={isNonMobileScreen}>
-        <span className="material-symbols-outlined" style={{ fontSize: "6rem" }}>business_center</span>
-        Planejamento estratégico e branding
+          <span
+            className="material-symbols-outlined"
+            style={{ fontSize: "6rem" }}
+          >
+            business_center
+          </span>
+          Planejamento estratégico e branding
         </BenefitCard>
         <BenefitCard displaySize={isNonMobileScreen}>
-        <span className="material-symbols-outlined" style={{ fontSize: "6rem" }}>cycle</span>
-          Investimento que gera retorno que gera investimento. Um ciclo retroalimentado de crescimento. 
+          <span
+            className="material-symbols-outlined"
+            style={{ fontSize: "6rem" }}
+          >
+            cycle
+          </span>
+          Investimento que gera retorno que gera investimento. Um ciclo
+          retroalimentado de crescimento.
         </BenefitCard>
         <BenefitCard displaySize={isNonMobileScreen}>
           <span
@@ -56,13 +72,13 @@ const Benefits = () => {
   );
 };
 const Wrapper = styled.div`
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 `;
 const BenefitCard = styled.div<{ displaySize: Boolean }>`
   height: 15rem;
@@ -78,6 +94,7 @@ const BenefitCard = styled.div<{ displaySize: Boolean }>`
   align-items: center;
   padding: 4rem 1rem 4rem 1rem;
   text-align: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 `;
 
 const BenefitsContainer = styled.div<{ displaySize: Boolean }>`
@@ -86,10 +103,10 @@ const BenefitsContainer = styled.div<{ displaySize: Boolean }>`
   padding: ${({ displaySize = true }) =>
     displaySize ? "1rem 0 1rem 0" : ".5rem 0 .5rem 0"};
   background-color: ${(p) => p.theme.secondary};
-  display: flex;
-  flex-direction: ${({ displaySize = true }) =>
-    displaySize ? "row" : "column"};
-  justify-content: center;
+  display: grid;
+  grid-template-columns: ${({ displaySize = true }) =>
+    displaySize ? "repeat(2, 1rem)" : "repeat(1, 1fr)"};
+  justify-content: start;
   align-items: center;
   font-size: 1rem;
   font-weight: 600;

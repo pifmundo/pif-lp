@@ -58,7 +58,7 @@ const Section = styled.section<{ displaySize: boolean }>`
   height: ${({ displaySize = true }) => (displaySize ? "50rem" : "95vh")};
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: start;
   flex-direction: column;
   background-color: ${(p) => p.theme.primary};
@@ -138,13 +138,14 @@ const ButtonWrapper = styled.div<{ displaySize: boolean }>`
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-  width: 100%;
+  width: ${({ displaySize = true }) =>
+    displaySize ? "55rem" : "95%"};
 `;
 
 const WhiteButton = styled.button<{ displaySize: boolean }>`
   height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3.4rem")};
 
-  width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
+  width: 100%;
 
   margin: ${({ displaySize = true }) =>
     displaySize ? "1rem 1rem 0 1rem" : "0 0 0 0"};
@@ -164,7 +165,7 @@ const WhiteButton = styled.button<{ displaySize: boolean }>`
 const ColoredButton = styled.button<{ displaySize: boolean }>`
   height: ${({ displaySize = true }) => (displaySize ? "4rem" : "3.4rem")};
 
-  width: ${({ displaySize = true }) => (displaySize ? "20rem" : "90%")};
+  width: 100%;
 
   margin: ${({ displaySize = true }) =>
     displaySize ? "1rem 1rem 0 1rem" : "1rem 0 0 0"};
