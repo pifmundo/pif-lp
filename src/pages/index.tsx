@@ -6,6 +6,7 @@ import { useState } from "react";
 import Benefits from "@/sections/benefits";
 import WhyToInvest from "@/sections/whyToInvest";
 import Contract from "@/sections/contract";
+import Savings from "@/sections/savings";
 // import * as theme from "../styles/Theme.styled";
 
 const darkTheme = {
@@ -26,24 +27,14 @@ const lightTheme = {
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState(darkTheme);
-    // const theme = useTheme();
 
-    const themeSwitch = () => {
-        setSelectedTheme(selectedTheme === lightTheme ? darkTheme : lightTheme);
-    }
-  //   const [hasScrolled, setHasScrolled] = useState(false);
-
-  //   const handleScroll = () => {
-  //     const offset = window.scrollY;
-  //     setHasScrolled(offset > 80);
-  //   };
-  //   useEffect(() => {
-  //     window.addEventListener("scroll", handleScroll);
-  //   }, []);
+  const themeSwitch = () => {
+    setSelectedTheme(selectedTheme === lightTheme ? darkTheme : lightTheme);
+  };
 
   return (
     <>
-      <ThemeProvider theme={selectedTheme} >
+      <ThemeProvider theme={selectedTheme}>
         <Head>
           <title>Midas</title>
         </Head>
@@ -51,13 +42,14 @@ export default function Home() {
         <Header />
 
         <Banner
-            themeSwitch={() => {
-                console.log(selectedTheme);
-                themeSwitch();
-            }}
+          themeSwitch={() => {
+            console.log(selectedTheme);
+            themeSwitch();
+          }}
         />
         {/* <Benefits />
         <WhyToInvest /> */}
+        <Savings />
         <Contract />
       </ThemeProvider>
     </>
