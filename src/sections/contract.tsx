@@ -68,6 +68,7 @@ const contract = () => {
   );
 };
 const Section = styled.section`
+scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;

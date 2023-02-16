@@ -59,6 +59,7 @@ const NavLinkWrapper = styled.div`
   height: 100%;
 `;
 const HeaderContainer = styled.header`
+scroll-snap-align: start;
   opacity: 1;
   border: none;
   position: sticky;
@@ -70,7 +71,7 @@ const HeaderContainer = styled.header`
   margin: 0;
   background-color: ${(p) => p.theme.primary};
   width: 100%;
-  height: 5rem;
+  height: 4rem;
 `;
 const MobileHeaderContainer = styled.header`
   display: flex;

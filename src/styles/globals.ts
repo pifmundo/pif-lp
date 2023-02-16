@@ -1,6 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+html, body {
+	background-color: #000;
+}
+html, body, #root {
+	scroll-behavior: smooth;
+	max-width: 100%;
+	overflow-x: hidden;
+	line-height: 1;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,14 +32,6 @@ time, mark, audio, video {
     display: none;
 }
 
-html{
-}
-background-color: #0000;
-/* HTML5 display-role reset for older browsers */
-body {
-    background-color: #000;
-    line-height: 1;
-}
 body::-webkit-scrollbar{
     background-color: #f000;
     display: none;

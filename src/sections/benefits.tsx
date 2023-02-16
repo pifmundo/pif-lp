@@ -1,29 +1,8 @@
 import { useEffect, useState } from "react";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-// import BusinessIcon from "@mui/icons-material/Business";
-// import StoreIcon from "@mui/icons-material/Store";
-// import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import styled from "styled-components";
 
-// const useMediaQuery = (query: string): boolean => {
-//   const [matches, setMatches] = useState(false);
-
-//   useEffect(() => {
-//     const mediaQueryList = window.matchMedia(query);
-//     setMatches(mediaQueryList.matches);
-//     const handleChange = (event: MediaQueryListEvent) =>
-//       setMatches(event.matches);
-//     mediaQueryList.addEventListener("change", handleChange);
-//     return () => {
-//       mediaQueryList.removeEventListener("change", handleChange);
-//     };
-//   }, [query]);
-
-//   return matches;
-// };
-
 const Benefits = () => {
-  //   const isNonMobileScreen = useMediaQuery("(min-width: 768px)");
   const isNonMobileScreen = true;
   return (
     <Wrapper>
@@ -72,7 +51,8 @@ const Benefits = () => {
   );
 };
 const Wrapper = styled.div`
-  height: 100%;
+  scroll-snap-align: start;
+  height: 50rem;
   width: 100%;
   justify-content: center;
   align-items: center;

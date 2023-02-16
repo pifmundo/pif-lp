@@ -7,6 +7,8 @@ import Benefits from "@/sections/benefits";
 import WhyToInvest from "@/sections/whyToInvest";
 import Contract from "@/sections/contract";
 import Savings from "@/sections/savings";
+import Footer from "@/sections/footer";
+// import AnchorLink from "react-anchor-link-smooth-scroll";
 // import * as theme from "../styles/Theme.styled";
 
 const darkTheme = {
@@ -25,6 +27,13 @@ const lightTheme = {
   alt: "#fddd00",
 };
 
+const Main = styled.div`
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-padding-top: 4rem;
+  scroll-behavior: smooth;
+  height: 100vh;
+`;
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState(darkTheme);
 
@@ -35,22 +44,19 @@ export default function Home() {
   return (
     <>
       <ThemeProvider theme={selectedTheme}>
-        <Head>
-          <title>Midas</title>
-        </Head>
-
-        <Header />
-
-        <Banner
-          themeSwitch={() => {
-            console.log(selectedTheme);
-            themeSwitch();
-          }}
-        />
-        {/* <Benefits />
-        <WhyToInvest /> */}
-        <Savings />
-        <Contract />
+        <Main>
+          <Head>
+            <title>Midas</title>
+          </Head>
+          Ï
+          <Header />
+          <Banner />
+          <Benefits />
+          <WhyToInvest />
+          <Savings />
+          <Contract />
+          <Footer />
+        </Main>
       </ThemeProvider>
     </>
   );

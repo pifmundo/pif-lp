@@ -1,9 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import GlobalStyle from "../styles/globals";
-import { ThemeProvider } from "styled-components";
 import type { AppProps } from "next/app";
 import { Roboto } from "@next/font/google";
-import { useState } from "react";
 import Script from "next/script";
 
 const roboto = Roboto({

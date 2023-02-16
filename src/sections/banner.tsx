@@ -19,11 +19,7 @@ const useMediaQuery = (query: string): boolean => {
   return matches;
 };
 
-type BannerProps = {
-  themeSwitch: () => void;
-};
-
-const Banner = ({ themeSwitch }: BannerProps) => {
+const Banner = () => {
   const ScreenSizeBool = useMediaQuery("(min-width: 768px)");
   return (
     <Section displaySize={ScreenSizeBool}>
@@ -44,10 +40,16 @@ const Banner = ({ themeSwitch }: BannerProps) => {
         </BrandDescription>
       </TextWrapper>
       <ButtonWrapper displaySize={ScreenSizeBool}>
-        <WhiteButton displaySize={ScreenSizeBool} onClick={_ => Router.push("https://wa.link/ifyvwo")}>
+        <WhiteButton
+          displaySize={ScreenSizeBool}
+          onClick={(_) => Router.push("https://wa.link/ifyvwo")}
+        >
           Conheça a Midas
         </WhiteButton>
-        <ColoredButton displaySize={ScreenSizeBool} onClick={_ => Router.push("https://wa.link/ifyvwo")}>
+        <ColoredButton
+          displaySize={ScreenSizeBool}
+          onClick={(_) => Router.push("https://wa.link/ifyvwo")}
+        >
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
@@ -55,6 +57,7 @@ const Banner = ({ themeSwitch }: BannerProps) => {
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
+  scroll-snap-align: start;
   height: ${({ displaySize = true }) => (displaySize ? "50rem" : "95vh")};
   width: 100%;
   display: flex;
@@ -73,7 +76,7 @@ const TextWrapper = styled.div<{ displaySize: boolean }>`
   align-items: center;
   /* margin-top: ${({ displaySize = true }) =>
     displaySize ? "1rem" : "2rem"}; */
-    padding: 0;
+  padding: 0;
 `;
 const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   width: 100%;
@@ -138,8 +141,7 @@ const ButtonWrapper = styled.div<{ displaySize: boolean }>`
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-  width: ${({ displaySize = true }) =>
-    displaySize ? "55rem" : "95%"};
+  width: ${({ displaySize = true }) => (displaySize ? "55rem" : "95%")};
 `;
 
 const WhiteButton = styled.button<{ displaySize: boolean }>`
@@ -224,7 +226,7 @@ const ColoredButton = styled.button<{ displaySize: boolean }>`
       background-color: #fddd00;
     }
     50% {
-        color: ${(p) => p.theme.primary};
+      color: ${(p) => p.theme.primary};
     }
     100% {
       //make a fire effect with multiple shadows at least 10

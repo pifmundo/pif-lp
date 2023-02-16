@@ -8,14 +8,15 @@ const WhyToInvest = () => {
   );
 };
 const Wrapper = styled.div`
-  height: 100%;
+  scroll-snap-align: start;
+  height: 50rem;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   background-color: ${(p) => p.theme.primary};
-  h1{
+  h1 {
     color: ${(p) => p.theme.secondary};
   }
 `;

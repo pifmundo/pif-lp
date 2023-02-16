@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CountUp from "react-countup";
-import ScrollTrigger from "react-scroll-trigger";
 import { useMediaQuery } from "@mui/material";
 
 const Savings = () => {
@@ -19,19 +18,25 @@ const Savings = () => {
 
   const isNonMobileScreen = useMediaQuery("(min-width: 768px)");
 
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setCounterOn(true);
+        }
+      });
+    });
+    ref.current && observer.observe(ref.current);//oh god how I hate html elements
+    return () => (ref.current && observer.unobserve(ref.current)) || console.log("fail");
+  }, []);
+
   return (
-    <Section isNonMobileScreen={isNonMobileScreen}>
+    <Section ref={ref} isNonMobileScreen={isNonMobileScreen}>
       <h2>
         Com a midas, você <mark>ECONOMIZA</mark>
       </h2>
-      <ScrollTrigger //eslint disable line
-        onEnter={() => setCounterOn(true)}
-        onExit={() => {
-          setCounterOn(false);
-          setCounter(0);
-          setFont(false);
-        }}
-      >
         <div>
           <h2>
             <mark>
@@ -131,13 +136,13 @@ const Savings = () => {
           )}
           {font && <h3>(fonte: Glassdoor)</h3>}
         </div>
-      </ScrollTrigger>
     </Section>
   );
 };
 const Section = styled.section<{ isNonMobileScreen: boolean }>`
+  scroll-snap-align: start;
   background-color: ${(p) => p.theme.primary};
-  height: 40rem;
+  height: 90vh;
   width: 100%;
   display: flex;
   flex-direction: column;
