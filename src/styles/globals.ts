@@ -6,7 +6,7 @@ html, body {
 }
 html, body, #root {
 	scroll-behavior: smooth;
-	max-width: 100%;
+	max-width: 100vw;
 	overflow-x: hidden;
 	line-height: 1;
 }

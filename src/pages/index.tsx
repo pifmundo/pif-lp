@@ -8,6 +8,7 @@ import WhyToInvest from "@/sections/whyToInvest";
 import Contract from "@/sections/contract";
 import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
+import { useMediaQuery } from "@mui/material";
 // import AnchorLink from "react-anchor-link-smooth-scroll";
 // import * as theme from "../styles/Theme.styled";
 
@@ -27,31 +28,24 @@ const lightTheme = {
   alt: "#fddd00",
 };
 
-const Main = styled.div`
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scroll-padding-top: 4rem;
-  scroll-behavior: smooth;
-  height: 100vh;
-`;
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState(darkTheme);
+  const isNonMobileScreen = useMediaQuery("(min-width: 768px");
 
   const themeSwitch = () => {
     setSelectedTheme(selectedTheme === lightTheme ? darkTheme : lightTheme);
   };
-
+  
   return (
     <>
       <ThemeProvider theme={selectedTheme}>
-        <Main>
+        <Main isNonMobileScreen={isNonMobileScreen}>
           <Head>
             <title>Midas</title>
           </Head>
-          Ï
           <Header />
           <Banner />
-          <Benefits />
+          {/* <Benefits /> */}
           <WhyToInvest />
           <Savings />
           <Contract />
@@ -61,3 +55,11 @@ export default function Home() {
     </>
   );
 }
+const Main = styled.div<{isNonMobileScreen: boolean}>`
+  overflow-x: hidden;
+  scroll-padding-top: ${(isNonMobileScreen) => isNonMobileScreen ? "3rem" : "7rem"};
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: 100vh;
+`;

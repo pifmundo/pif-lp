@@ -140,6 +140,7 @@ const Savings = () => {
   );
 };
 const Section = styled.section<{ isNonMobileScreen: boolean }>`
+  padding : 2rem 0 0 0;
   scroll-snap-align: start;
   background-color: ${(p) => p.theme.primary};
   height: 90vh;

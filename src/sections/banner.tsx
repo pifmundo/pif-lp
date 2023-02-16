@@ -57,8 +57,7 @@ const Banner = () => {
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  scroll-snap-align: start;
-  height: ${({ displaySize = true }) => (displaySize ? "50rem" : "95vh")};
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
