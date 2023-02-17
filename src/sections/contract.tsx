@@ -94,8 +94,9 @@ const Wrapper = styled.div<{ displaySize: boolean }>`
   width: 100%;
 `;
 const Card = styled.div`
-scroll-snap-align: start;
+  scroll-snap-align: start;
   opacity: 0.9;
+  -webkit-backdrop-filter: blur(2em);
   backdrop-filter: blur(1rem);
   display: flex;
   padding: 2rem 1.5rem 2rem 1.5rem;

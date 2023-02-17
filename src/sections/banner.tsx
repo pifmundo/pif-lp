@@ -53,6 +53,8 @@ const Banner = () => {
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
+      {/* arrasta pra cima */}
+      <span className="material-symbols-outlined">keyboard_arrow_up</span>
     </Section>
   );
 };
@@ -65,6 +67,10 @@ const Section = styled.section<{ displaySize: boolean }>`
   flex-direction: column;
   background-color: ${(p) => p.theme.primary};
   padding: 0;
+  span {
+    color: ${(p) => p.theme.alt};
+    font-size: 3rem;
+  }
 `;
 const TextWrapper = styled.div<{ displaySize: boolean }>`
   width: 100%;

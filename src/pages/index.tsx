@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Banner from "@/sections/banner";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import Benefits from "@/sections/benefits";
 import WhyToInvest from "@/sections/whyToInvest";
@@ -9,6 +9,8 @@ import Contract from "@/sections/contract";
 import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
 import { useMediaQuery } from "@mui/material";
+import { BrowserView, isMobileSafari } from "react-device-detect";
+import { isSafari } from "react-device-detect";
 // import AnchorLink from "react-anchor-link-smooth-scroll";
 // import * as theme from "../styles/Theme.styled";
 
@@ -35,31 +37,20 @@ export default function Home() {
   const themeSwitch = () => {
     setSelectedTheme(selectedTheme === lightTheme ? darkTheme : lightTheme);
   };
-  
   return (
     <>
       <ThemeProvider theme={selectedTheme}>
-        <Main isNonMobileScreen={isNonMobileScreen}>
-          <Head>
-            <title>Midas</title>
-          </Head>
-          <Header />
-          <Banner />
-          {/* <Benefits /> */}
-          <WhyToInvest />
-          <Savings />
-          <Contract />
-          <Footer />
-        </Main>
+        <Head>
+          <title>Midas</title>
+        </Head>
+        <Header />
+        <Banner />
+        <Benefits />
+        <WhyToInvest />
+        <Savings />
+        <Contract />
+        <Footer />
       </ThemeProvider>
     </>
   );
 }
-const Main = styled.div<{isNonMobileScreen: boolean}>`
-  overflow-x: hidden;
-  scroll-padding-top: ${(isNonMobileScreen) => isNonMobileScreen ? "3rem" : "7rem"};
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  height: 100vh;
-`;

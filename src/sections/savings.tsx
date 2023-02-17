@@ -26,6 +26,10 @@ const Savings = () => {
         if (entry.isIntersecting) {
           setCounterOn(true);
         }
+        else {
+          setCounterOn(false);
+          setCounter(0);
+        }
       });
     });
     ref.current && observer.observe(ref.current);//oh god how I hate html elements
