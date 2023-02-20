@@ -53,13 +53,12 @@ const Banner = () => {
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
-      {/* arrasta pra cima */}
-      <span className="material-symbols-outlined">keyboard_arrow_up</span>
+      {ScreenSizeBool || <span className="material-symbols-outlined">keyboard_arrow_up</span>}
     </Section>
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  height: 100vh;
+  height: 40rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -139,7 +138,7 @@ const BrandDescription = styled.p<{ displaySize: boolean }>`
 `;
 
 const ButtonWrapper = styled.div<{ displaySize: boolean }>`
-  margin-top: 2rem;
+  margin: 2rem 0 2rem 0;
   display: flex;
   flex-direction: ${({ displaySize = true }) =>
     displaySize ? "row" : "column"};

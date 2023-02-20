@@ -45,7 +45,7 @@ export default function Home() {
         </Head>
         <Header />
         <Banner />
-        <Benefits />
+        {/* <Benefits /> */}
         <WhyToInvest />
         <Savings />
         <Contract />

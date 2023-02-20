@@ -95,6 +95,7 @@ const Wrapper = styled.div<{ displaySize: boolean }>`
 `;
 const Card = styled.div`
   scroll-snap-align: start;
+  scroll-padding-top: 5rem;
   opacity: 0.9;
   -webkit-backdrop-filter: blur(2em);
   backdrop-filter: blur(1rem);
