@@ -1,10 +1,11 @@
 import { useMediaQuery } from "@mui/material";
+import Router from "next/router";
 import styled from "styled-components";
 
 const contract = () => {
   const displaySize = useMediaQuery("(max-width: 768px)");
   return (
-    <Section displaySize={displaySize}>
+    <Section id="contract" displaySize={displaySize}>
       <Wrapper displaySize={displaySize}>
         <Card>
           <List>
@@ -26,7 +27,7 @@ const contract = () => {
             <Price>R$ 1.719,99/mês</Price>
             <Discount>(Você economiza R$400,00/mês)</Discount>
           </Confirm>
-          <Button displaySize={displaySize}>Contratar</Button>
+          <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
         </Card>
         <Card>
           <List>
@@ -51,7 +52,7 @@ const contract = () => {
           <Confirm>
             <Price>R$ 2.769,99/mês</Price>
           </Confirm>
-          <Button displaySize={displaySize}>Contratar</Button>
+          <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
         </Card>
         <Card>
           <List>
@@ -71,7 +72,7 @@ const contract = () => {
           <Confirm>
             <Price>R$ 5.235,99/mês</Price>
           </Confirm>
-          <Button displaySize={displaySize}>Contratar</Button>
+          <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
         </Card>
       </Wrapper>
     </Section>

@@ -9,8 +9,6 @@ import Contract from "@/sections/contract";
 import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
 import { useMediaQuery } from "@mui/material";
-import { BrowserView, isMobileSafari } from "react-device-detect";
-import { isSafari } from "react-device-detect";
 // import AnchorLink from "react-anchor-link-smooth-scroll";
 // import * as theme from "../styles/Theme.styled";
 
@@ -46,7 +44,7 @@ export default function Home() {
         <Header />
         <Banner />
         {/* <Benefits /> */}
-        <WhyToInvest />
+        {/* <WhyToInvest /> */}
         <Savings />
         <Contract />
         <Footer />

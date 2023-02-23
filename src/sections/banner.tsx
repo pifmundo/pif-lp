@@ -42,7 +42,7 @@ const Banner = () => {
       <ButtonWrapper displaySize={ScreenSizeBool}>
         <WhiteButton
           displaySize={ScreenSizeBool}
-          onClick={(_) => Router.push("https://wa.link/ifyvwo")}
+          onClick={(_) => Router.push("/#benefits")}
         >
           Conheça a Midas
         </WhiteButton>

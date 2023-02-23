@@ -4,14 +4,7 @@ export default createGlobalStyle`
 html, body {
 	background-color: #000;
 	scroll-behavior: smooth;
-	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
-	overflow-y: scroll;
-	scroll-padding-top: 1rem;
-	max-width: 100vw;
 	overflow-x: hidden;
-	height: 100%;
-	line-height: 1;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

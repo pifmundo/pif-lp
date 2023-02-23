@@ -11,17 +11,18 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
       <NavLinkWrapper>
-        <NavLink padding="1rem" to="/about">
+        {/* <NavLink padding="1rem" to="/about">
           Crescimento
-        </NavLink>
-        <NavLink padding="1rem" to="/contact">
+        </NavLink> */}
+        {/* make it an anchor link */}
+        <NavLink padding="1rem" to="#benefits">
           Vantagens
         </NavLink>
-        <NavLink padding="1rem" to="/login">
+        <NavLink padding="1rem" to="#contract">
           Planos
         </NavLink>
       </NavLinkWrapper>
-      <DragHandle />
+      {/* <DragHandle /> */}
     </HeaderContainer>
   ) : (
     <MobileHeaderContainer>
