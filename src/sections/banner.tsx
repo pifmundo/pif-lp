@@ -1,6 +1,6 @@
 import Router from "next/router";
 import React, { useEffect, useState } from "react";
-import styled, { keyframes, ThemeProvider } from "styled-components";
+import styled from "styled-components";
 
 const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(false);
@@ -53,9 +53,9 @@ const Banner = () => {
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
-      {ScreenSizeBool || (
+      {/* {ScreenSizeBool || (
         <span className="material-symbols-outlined">keyboard_arrow_up</span>
-      )}
+      )} */}
     </Section>
   );
 };
