@@ -3,12 +3,13 @@ import Header from "@/components/Header";
 import Banner from "@/sections/banner";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
-import Benefits from "@/sections/benefits";
-import WhyToInvest from "@/sections/whyToInvest";
 import Contract from "@/sections/contract";
 import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
 import { useMediaQuery } from "@mui/material";
+// import Benefits from "@/sections/benefits";
+// import WhyToInvest from "@/sections/whyToInvest";
+// import Diagonal from "@/sections/diagonal";
 // import AnchorLink from "react-anchor-link-smooth-scroll";
 // import * as theme from "../styles/Theme.styled";
 
@@ -43,6 +44,7 @@ export default function Home() {
         </Head>
         <Header />
         <Banner />
+        {/* <Diagonal /> */}
         {/* <Benefits /> */}
         {/* <WhyToInvest /> */}
         <Savings />
