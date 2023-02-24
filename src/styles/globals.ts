@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 html, body {
 	background-color: #000;
-	scroll-behavior: smooth;
 	overflow-x: hidden;
 }
 html, body, div, span, applet, object, iframe,

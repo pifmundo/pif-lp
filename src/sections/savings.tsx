@@ -25,27 +25,28 @@ const Savings = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setCounterOn(true);
-        }
-        else {
+        } else {
           setCounterOn(false);
           setCounter(0);
         }
       });
     });
-    ref.current && observer.observe(ref.current);//oh god how I hate html elements
-    return () => (ref.current && observer.unobserve(ref.current)) || console.log("fail");
+    ref.current && observer.observe(ref.current); //oh god how I hate html elements
+    return () =>
+      (ref.current && observer.unobserve(ref.current)) || console.log("fail");
   }, []);
 
   return (
     <Section id="benefits" ref={ref} isNonMobileScreen={isNonMobileScreen}>
-      <h2>
-        Com a midas, você <mark>ECONOMIZA</mark>
-      </h2>
-        <div>
-          <h2>
-            <mark>
-              R${" "}
-              {counterOn && (
+        <h2>
+          Com a midas, você <mark>ECONOMIZA</mark>
+        </h2>
+      <div>
+        <h2>
+          <mark>
+            {counterOn && (
+              <>
+                R${" "}
                 <CountUp
                   delay={0}
                   duration={1.2}
@@ -56,15 +57,17 @@ const Savings = () => {
                   separator=" "
                   onEnd={() => setCounter(counter + 1)}
                 />
-              )}
-            </mark>
-            {" um designer"}
-          </h2>
-          {counter > 0 && (
-            <h2>
-              <mark>
-                R${" "}
-                {counterOn && (
+              </>
+            )}
+          </mark>
+          {" um designer"}
+        </h2>
+        {counter > 0 && (
+          <h2>
+            <mark>
+              {counterOn && (
+                <>
+                  R${" "}
                   <CountUp
                     delay={0}
                     duration={1.2}
@@ -75,16 +78,18 @@ const Savings = () => {
                     separator=" "
                     onEnd={() => setCounter(counter + 1)}
                   />
-                )}
-              </mark>
-              {" um copywritter"}
-            </h2>
-          )}
-          {counter > 1 && (
-            <h2>
-              <mark>
-                R${" "}
-                {counterOn && (
+                </>
+              )}
+            </mark>
+            {" um copywritter"}
+          </h2>
+        )}
+        {counter > 1 && (
+          <h2>
+            <mark>
+              {counterOn && (
+                <>
+                  R${" "}
                   <CountUp
                     delay={0}
                     duration={1.2}
@@ -95,16 +100,18 @@ const Savings = () => {
                     separator=" "
                     onEnd={() => setCounter(counter + 1)}
                   />
-                )}
-              </mark>
-              {" um gestor de tráfego"}
-            </h2>
-          )}
-          {counter > 2 && (
-            <h2>
-              <mark>
-                R${" "}
-                {counterOn && (
+                </>
+              )}
+            </mark>
+            {" um gestor de tráfego"}
+          </h2>
+        )}
+        {counter > 2 && (
+          <h2>
+            <mark>
+              {counterOn && (
+                <>
+                  R${" "}
                   <CountUp
                     delay={0}
                     duration={1.2}
@@ -115,36 +122,37 @@ const Savings = () => {
                     separator=" "
                     onEnd={() => setCounter(counter + 1)}
                   />
-                )}
-              </mark>
-              {" um desenvolvedor de software front-end"}
-            </h2>
-          )}
-          {counterOn && (
-            <Price>
-              <mark>
-                {"R$ "}
-                <CountUp
-                  delay={0}
-                  duration={4.8}
-                  start={0}
-                  end={precoTotal}
-                  decimals={2}
-                  decimal=","
-                  separator=" "
-                  onEnd={() => setFont(true)}
-                />
-              </mark>
-              {font && isNonMobileScreen && <p>por mês</p>}
-            </Price>
-          )}
-          {font && <h3>(fonte: Glassdoor)</h3>}
-        </div>
+                </>
+              )}
+            </mark>
+            {" um desenvolvedor de software front-end"}
+          </h2>
+        )}
+        {counterOn && (
+          <Price>
+            <mark>
+              {"R$ "}
+              <CountUp
+                delay={0}
+                duration={4.8}
+                start={0}
+                end={precoTotal}
+                decimals={2}
+                decimal=","
+                separator=" "
+                onEnd={() => setFont(true)}
+              />
+            </mark>
+            {font && isNonMobileScreen && <p>por mês</p>}
+          </Price>
+        )}
+        {font && <h3>(fonte: Glassdoor)</h3>}
+      </div>
     </Section>
   );
 };
 const Section = styled.section<{ isNonMobileScreen: boolean }>`
-  padding : 2rem 0 0 0;
+  padding: 2rem 0 0 0;
   scroll-snap-align: start;
   background-color: ${(p) => p.theme.primary};
   height: 90vh;
@@ -159,7 +167,7 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
   }
   h1 {
     margin: 0;
-    font-size: ${(p) => (p.isNonMobileScreen ? "7rem" : "16.7vw")};
+    font-size: ${(p) => (p.isNonMobileScreen ? "7.2rem" : "16.6vw")};
     color: ${(p) => p.theme.text};
   }
   h2 {
@@ -168,7 +176,9 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
     color: ${(p) => p.theme.text};
   }
   div {
-    margin: 4rem 0 4rem 0;
+    width: 100%;
+    max-width: 50rem;
+    padding: 4rem 0 4rem 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -181,7 +191,7 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
   }
   p {
     font-size: 1rem;
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
 `;
 const Price = styled.h1`

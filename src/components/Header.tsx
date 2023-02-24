@@ -6,7 +6,7 @@ import styled from "styled-components";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 
 const Header = () => {
-  const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
+  const isNonMobileScreen = useMediaQuery("(min-width: 1100px)");
   return isNonMobileScreen ? (
     <HeaderContainer>
       <Logo />
@@ -45,12 +45,9 @@ const NavLinkWrapper = styled.div`
   height: 100%;
 `;
 const HeaderContainer = styled.header`
-  z-index: 100;
-  scroll-snap-align: start;
-  opacity: 1;
   border: none;
   position: sticky;
-  top: 0;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   align-items: center;

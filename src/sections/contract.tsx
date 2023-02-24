@@ -3,7 +3,7 @@ import Router from "next/router";
 import styled from "styled-components";
 
 const contract = () => {
-  const displaySize = useMediaQuery("(max-width: 768px)");
+  const displaySize = useMediaQuery("(max-width: 1100px)");
   return (
     <Section id="contract" displaySize={displaySize}>
       <Wrapper displaySize={displaySize}>
@@ -86,9 +86,9 @@ const Section = styled.section<{ displaySize: boolean }>`
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  height: ${(p) => (p.displaySize ? "120rem" : "35rem")};
+  height: ${(p) => (p.displaySize ? "122rem" : "35rem")};
   background-color: ${(p) => p.theme.primary};
 `;
 const Wrapper = styled.div<{ displaySize: boolean }>`
@@ -106,15 +106,13 @@ const Card = styled.div`
   backdrop-filter: blur(1rem);
   display: flex;
   padding: 2rem 1.5rem 2rem 1.5rem;
-  z-index: 10;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #0a0a0a; */
   background-image: linear-gradient(230deg, #050505 0%, #14110f 100%);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
-  width: 20rem;
-  height: 34rem;
+  width: 80%;
+  height: 60vh;
   margin: 2rem;
   border-radius: 1rem;
   &:hover {

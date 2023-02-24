@@ -1,26 +1,10 @@
 import Router from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-
-const useMediaQuery = (query: string): boolean => {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const mediaQueryList = window.matchMedia(query);
-    setMatches(mediaQueryList.matches);
-    const handleChange = (event: MediaQueryListEvent) =>
-      setMatches(event.matches);
-    mediaQueryList.addEventListener("change", handleChange);
-    return () => {
-      mediaQueryList.removeEventListener("change", handleChange);
-    };
-  }, [query]);
-
-  return matches;
-};
+import { useMediaQuery } from "@mui/material";
 
 const Banner = () => {
-  const ScreenSizeBool = useMediaQuery("(min-width: 1000px)");
+  const ScreenSizeBool = useMediaQuery("(min-width: 1100px)");
   return (
     <Section displaySize={ScreenSizeBool}>
       <TextWrapper displaySize={ScreenSizeBool}>
@@ -60,10 +44,12 @@ const Banner = () => {
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  height: 70vh;
+  height: 100vh;
+  min-height: 50rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   flex-direction: column;
   background-color: ${(p) => p.theme.primary};
   span {
@@ -81,19 +67,20 @@ const Section = styled.section<{ displaySize: boolean }>`
   }
 `;
 const TextWrapper = styled.div<{ displaySize: boolean }>`
-  width: 100%;
-  height: ${({ displaySize = true }) => (displaySize ? "35rem" : "20rem")};
+  min-height: ${({ displaySize = true }) => (displaySize ? "32.5rem" : "9vw")};
+  height: ${({ displaySize = true }) => (displaySize ? "60vh" : "85vw")};
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
 `;
 const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
+  min-height: ${({ displaySize = true }) => (displaySize ? "12vh" : "20vw")};
   width: 100%;
-  font-size: ${({ displaySize = true }) => (displaySize ? "7.5rem" : "17vw")};
+  font-size: ${({ displaySize = true }) => (displaySize ? "14.5vh" : "17vw")};
   text-align: center;
   font-weight: 700;
-  height: ${({ displaySize = true }) => (displaySize ? "9.1rem" : "100vw")};
+  height: ${({ displaySize = true }) => (displaySize ? "18.4vh" : "5rem")};
   background: linear-gradient(
     48deg,
     #ea5308 20%,
@@ -138,15 +125,15 @@ const BrandDescription = styled.p<{ displaySize: boolean }>`
   text-align: center;
   letter-spacing: 0.03rem;
   font-weight: 400;
+  min-height: ${({ displaySize = true }) => (displaySize ? "5rem" : "15vw")};
   font-size: ${({ displaySize = true }) => (displaySize ? "1.4rem" : "5vw")};
   width: ${({ displaySize = true }) => (displaySize ? "50%" : "90%")};
-  margin-top: ${({ displaySize = true }) => (displaySize ? "2rem" : "2rem")};
+  margin-top: ${({ displaySize = true }) => (displaySize ? "2rem" : "0rem")};
 `;
 
 const ButtonWrapper = styled.div<{ displaySize: boolean }>`
-  margin: 2rem 0 2rem 0;
   display: flex;
-  flex-direction: ${({ displaySize = true }) =>
+  flex-direction: ${({ displaySize = false }) =>
     displaySize ? "row" : "column"};
   justify-content: center;
   align-items: center;
