@@ -20,7 +20,7 @@ const useMediaQuery = (query: string): boolean => {
 };
 
 const Banner = () => {
-  const ScreenSizeBool = useMediaQuery("(min-width: 500px)");
+  const ScreenSizeBool = useMediaQuery("(min-width: 1000px)");
   return (
     <Section displaySize={ScreenSizeBool}>
       <TextWrapper displaySize={ScreenSizeBool}>
@@ -60,7 +60,7 @@ const Banner = () => {
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  height: 40rem;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,7 +78,6 @@ const Section = styled.section<{ displaySize: boolean }>`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 3rem;
-    margin-bottom: 2rem;
   }
 `;
 const TextWrapper = styled.div<{ displaySize: boolean }>`
@@ -94,7 +93,7 @@ const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   font-size: ${({ displaySize = true }) => (displaySize ? "7.5rem" : "17vw")};
   text-align: center;
   font-weight: 700;
-  height: ${({ displaySize = true }) => (displaySize ? "8.2rem" : "16.7vw")};
+  height: ${({ displaySize = true }) => (displaySize ? "9.1rem" : "100vw")};
   background: linear-gradient(
     48deg,
     #ea5308 20%,
