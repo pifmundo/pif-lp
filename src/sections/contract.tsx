@@ -23,10 +23,10 @@ const contract = () => {
             </Benefit>
           </List>
           <Confirm>
-            <Price cut> ㅤR$ 0.000,00ㅤ</Price>
-            <Price>R$ 0.000,00/mês</Price>
+            {/* <Price cut> ㅤR$ 0.000,00ㅤ</Price> */}
+            {/* <Price>R$ 0.000,00/mês</Price> */}
             {/* <Price>R$ 1.719,99/mês</Price> */}
-            <Discount>(Você economiza R$000,00/mês)</Discount>
+            {/* <Discount>(Você economiza R$000,00/mês)</Discount> */}
             {/* <Discount>(Você economiza R$400,00/mês)</Discount> */}
           </Confirm>
           <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
@@ -52,7 +52,7 @@ const contract = () => {
             </Benefit>
           </List>
           <Confirm>
-            <Price>R$ 0.000,00/mês</Price>
+            {/* <Price>R$ 0.000,00/mês</Price> */}
             {/* <Price>R$ 2.769,99/mês</Price> */}
           </Confirm>
           <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
@@ -73,7 +73,7 @@ const contract = () => {
             <Benefit>Estratégia de marketing unica para cada case</Benefit>
           </List>
           <Confirm>
-            <Price>R$ 0.000,00/mês</Price>
+            {/* <Price>R$ 0.000,00/mês</Price> */}
             {/* <Price>R$ 5.235,99/mês</Price> */}
           </Confirm>
           <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
