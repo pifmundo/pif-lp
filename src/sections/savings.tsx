@@ -159,7 +159,7 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
   }
   h1 {
     margin: 0;
-    font-size: ${(p) => (p.isNonMobileScreen ? "7rem" : "4rem")};
+    font-size: ${(p) => (p.isNonMobileScreen ? "7rem" : "16.7vw")};
     color: ${(p) => p.theme.text};
   }
   h2 {

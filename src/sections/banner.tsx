@@ -20,7 +20,7 @@ const useMediaQuery = (query: string): boolean => {
 };
 
 const Banner = () => {
-  const ScreenSizeBool = useMediaQuery("(min-width: 768px)");
+  const ScreenSizeBool = useMediaQuery("(min-width: 500px)");
   return (
     <Section displaySize={ScreenSizeBool}>
       <TextWrapper displaySize={ScreenSizeBool}>
@@ -53,22 +53,32 @@ const Banner = () => {
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
-      {ScreenSizeBool || <span className="material-symbols-outlined">keyboard_arrow_up</span>}
+      {ScreenSizeBool || (
+        <span className="material-symbols-outlined">keyboard_arrow_up</span>
+      )}
     </Section>
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
   height: 40rem;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   flex-direction: column;
   background-color: ${(p) => p.theme.primary};
-  padding: 0;
   span {
-    color: ${(p) => p.theme.alt};
+    /* color: ${(p) => p.theme.alt}; */
+    background: linear-gradient(
+      48deg,
+      #ea5308 20%,
+      rgba(253, 221, 0, 1) 50%,
+      rgba(228, 117, 5, 1) 90%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 3rem;
+    margin-bottom: 2rem;
   }
 `;
 const TextWrapper = styled.div<{ displaySize: boolean }>`
@@ -78,16 +88,13 @@ const TextWrapper = styled.div<{ displaySize: boolean }>`
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  /* margin-top: ${({ displaySize = true }) =>
-    displaySize ? "1rem" : "2rem"}; */
-  padding: 0;
 `;
 const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   width: 100%;
   font-size: ${({ displaySize = true }) => (displaySize ? "7.5rem" : "17vw")};
   text-align: center;
   font-weight: 700;
-  height: ${({ displaySize = true }) => (displaySize ? "8.2rem" : "11vh")};
+  height: ${({ displaySize = true }) => (displaySize ? "8.2rem" : "16.7vw")};
   background: linear-gradient(
     48deg,
     #ea5308 20%,
