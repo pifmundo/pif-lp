@@ -8,6 +8,7 @@ import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
 import { useMediaQuery } from "@mui/material";
 import Diagonal from "@/sections/diagonal";
+import React from "react";
 // import Benefits from "@/sections/benefits";
 // import WhyToInvest from "@/sections/whyToInvest";
 // import AnchorLink from "react-anchor-link-smooth-scroll";

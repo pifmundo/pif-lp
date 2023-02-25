@@ -11,15 +11,17 @@ const Diagonal = () => {
         <h1>Algum texto</h1>
         <h2>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quam
-          eaque tempora temporibus facilis laborum recusandae. Quisquam, quod ea amet consectetur. 
+          eaque tempora temporibus facilis laborum recusandae. Quisquam, quod ea
+          amet consectetur.
         </h2>
       </TextWrapper>
+      {/* <Carousel /> */}
       <Card isNonMobileScreen={isNonMobileScreen}>
         <Image
-          src={picturePath}
+          src={"/JF.jpg"}
           alt="Picture of the author"
-          width={isNonMobileScreen ? 400 : 200}
-          height={isNonMobileScreen ? 400 : 200}
+          width={500}
+          height={500}
           className="rounded-image"
         />
         <div>
@@ -91,8 +93,8 @@ const Card = styled.div<{ isNonMobileScreen: boolean }>`
     height: 0.1rem;
     font-size: 2rem;
     margin: 0.5rem 0 1rem 0;
-}
-h2 {
+  }
+  h2 {
     color: #2d2d2d;
     font-size: 1rem;
     height: 0.1rem;
