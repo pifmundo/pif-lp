@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Logo from "@/components/Logo";
 import NavLink from "@/components/NavLink";
 import { useMediaQuery } from "@mui/material";

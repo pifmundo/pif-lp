@@ -38,9 +38,9 @@ const Savings = () => {
 
   return (
     <Section id="benefits" ref={ref} isNonMobileScreen={isNonMobileScreen}>
-        <h2>
-          Com a midas, você <mark>ECONOMIZA</mark>
-        </h2>
+      <h2>
+        Com a midas, você <mark>ECONOMIZA</mark>
+      </h2>
       <div>
         <h2>
           <mark>
@@ -56,6 +56,7 @@ const Savings = () => {
                   decimal=","
                   separator=" "
                   onEnd={() => setCounter(counter + 1)}
+                  onStart={() => setFont(false)}
                 />
               </>
             )}
@@ -152,7 +153,7 @@ const Savings = () => {
   );
 };
 const Section = styled.section<{ isNonMobileScreen: boolean }>`
-  padding: 2rem 0 0 0;
+  padding: 10rem 0 0 0;
   scroll-snap-align: start;
   background-color: ${(p) => p.theme.primary};
   height: 90vh;

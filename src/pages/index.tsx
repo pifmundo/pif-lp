@@ -7,9 +7,9 @@ import Contract from "@/sections/contract";
 import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
 import { useMediaQuery } from "@mui/material";
+import Diagonal from "@/sections/diagonal";
 // import Benefits from "@/sections/benefits";
 // import WhyToInvest from "@/sections/whyToInvest";
-// import Diagonal from "@/sections/diagonal";
 // import AnchorLink from "react-anchor-link-smooth-scroll";
 // import * as theme from "../styles/Theme.styled";
 
@@ -44,7 +44,7 @@ export default function Home() {
         </Head>
         <Header />
         <Banner />
-        {/* <Diagonal /> */}
+        <Diagonal />
         {/* <Benefits /> */}
         {/* <WhyToInvest /> */}
         <Savings />

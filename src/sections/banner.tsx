@@ -44,8 +44,8 @@ const Banner = () => {
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  height: 100vh;
-  min-height: 50rem;
+  height: 80vh;
+  min-height: 60rem;
   width: 100%;
   display: flex;
   align-items: center;
