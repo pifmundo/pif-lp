@@ -51,7 +51,6 @@ const Benefits = () => {
   );
 };
 const Wrapper = styled.div`
-  scroll-snap-align: start;
   height: 45rem;
   width: 100%;
   justify-content: center;

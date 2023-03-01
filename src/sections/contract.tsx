@@ -83,8 +83,7 @@ const contract = () => {
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  width: 100%;
-  height: 40rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,6 +93,7 @@ const Section = styled.section<{ displaySize: boolean }>`
   /* background-color: red; */
 `;
 const Wrapper = styled.div<{ displaySize: boolean }>`
+  height: 100%;
   max-width: 80rem;
   display: flex;
   flex-direction: ${(p) => (p.displaySize ? "column" : "row")};
@@ -101,8 +101,6 @@ const Wrapper = styled.div<{ displaySize: boolean }>`
   align-items: center;
 `;
 const Card = styled.div`
-  scroll-snap-align: start;
-  scroll-padding-top: 5rem;
   opacity: 0.9;
   -webkit-backdrop-filter: blur(2em);
   backdrop-filter: blur(1rem);
@@ -114,7 +112,8 @@ const Card = styled.div`
   /* background-image: linear-gradient(230deg, #050505 0%, #14110f 100%); */
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
-  height: 80%;
+  height: 30rem;
+  max-height: 80%;
   width: 80%;
   margin: 2rem;
   border-radius: 1rem;

@@ -58,7 +58,6 @@ const HeaderContainer = styled.header`
   height: 4rem;
 `;
 const MobileHeaderContainer = styled.header`
-  scroll-snap-align: start;
   display: flex;
   justify-content: center;
   align-items: center;
