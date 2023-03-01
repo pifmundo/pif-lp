@@ -22,14 +22,12 @@ const contract = () => {
               Suporte em até 12 horas via whatsapp de um dos nossos conselheiros
             </Benefit>
           </List>
-          <Confirm>
-            {/* <Price cut> ㅤR$ 0.000,00ㅤ</Price> */}
-            {/* <Price>R$ 0.000,00/mês</Price> */}
-            {/* <Price>R$ 1.719,99/mês</Price> */}
-            {/* <Discount>(Você economiza R$000,00/mês)</Discount> */}
-            {/* <Discount>(Você economiza R$400,00/mês)</Discount> */}
-          </Confirm>
-          <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
+          <Button
+            onClick={() => Router.push("https://wa.link/ifyvwo")}
+            displaySize={displaySize}
+          >
+            Contratar
+          </Button>
         </Card>
         <Card>
           <List>
@@ -51,11 +49,12 @@ const contract = () => {
               Priority support with a turnaround time of six hours or less
             </Benefit>
           </List>
-          <Confirm>
-            {/* <Price>R$ 0.000,00/mês</Price> */}
-            {/* <Price>R$ 2.769,99/mês</Price> */}
-          </Confirm>
-          <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
+          <Button
+            onClick={() => Router.push("https://wa.link/ifyvwo")}
+            displaySize={displaySize}
+          >
+            Contratar
+          </Button>
         </Card>
         <Card>
           <List>
@@ -72,31 +71,34 @@ const contract = () => {
             <Benefit>Suporte personalizado</Benefit>
             <Benefit>Estratégia de marketing unica para cada case</Benefit>
           </List>
-          <Confirm>
-            {/* <Price>R$ 0.000,00/mês</Price> */}
-            {/* <Price>R$ 5.235,99/mês</Price> */}
-          </Confirm>
-          <Button onClick={() => Router.push("https://wa.link/ifyvwo")} displaySize={displaySize}>Contratar</Button>
+          <Button
+            onClick={() => Router.push("https://wa.link/ifyvwo")}
+            displaySize={displaySize}
+          >
+            Contratar
+          </Button>
         </Card>
       </Wrapper>
     </Section>
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  scroll-snap-align: start;
+  width: 100%;
+  height: 40rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  height: ${(p) => (p.displaySize ? "122rem" : "35rem")};
+  /* height: ${(p) => (p.displaySize ? "122rem" : "35rem")}; */
   background-color: ${(p) => p.theme.primary};
+  /* background-color: red; */
 `;
 const Wrapper = styled.div<{ displaySize: boolean }>`
+  max-width: 80rem;
   display: flex;
   flex-direction: ${(p) => (p.displaySize ? "column" : "row")};
   justify-content: center;
   align-items: center;
-  width: 100%;
 `;
 const Card = styled.div`
   scroll-snap-align: start;
@@ -109,10 +111,11 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(230deg, #050505 0%, #14110f 100%);
+  /* background-image: linear-gradient(230deg, #050505 0%, #14110f 100%); */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+  height: 80%;
   width: 80%;
-  height: 60vh;
   margin: 2rem;
   border-radius: 1rem;
   &:hover {
