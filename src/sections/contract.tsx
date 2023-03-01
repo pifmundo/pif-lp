@@ -83,12 +83,11 @@ const contract = () => {
   );
 };
 const Section = styled.section<{ displaySize: boolean }>`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: ${(p) => (p.displaySize ? "122rem" : "35rem")}; */
+  height: ${(p) => (p.displaySize ? "110rem" : "40rem")};
   background-color: ${(p) => p.theme.primary};
   /* background-color: red; */
 `;
@@ -102,8 +101,8 @@ const Wrapper = styled.div<{ displaySize: boolean }>`
 `;
 const Card = styled.div`
   opacity: 0.9;
-  -webkit-backdrop-filter: blur(2em);
-  backdrop-filter: blur(1rem);
+  /* -webkit-backdrop-filter: blur(2em);
+  backdrop-filter: blur(1rem); */
   display: flex;
   padding: 2rem 1.5rem 2rem 1.5rem;
   flex-direction: column;
@@ -145,26 +144,6 @@ const List = styled.ul`
 const Benefit = styled.li<{ mark?: boolean }>`
   margin: 1rem 0 1rem 0;
   color: ${(p) => (p.mark ? p.theme.alt : p.theme.main)};
-`;
-const Confirm = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
-const Price = styled.h2<{ cut?: boolean }>`
-  color: ${(p) => (p.cut ? p.theme.main : p.theme.text)};
-  text-decoration: ${(p) => (p.cut ? "line-through" : "none")};
-  font-size: ${(p) => (p.cut ? "1rem" : "1.5rem")};
-  font-weight: ${(p) => (p.cut ? 400 : 500)};
-  margin: ${(p) => (p.cut ? "0rem" : ".3rem")};
-`;
-const Discount = styled.h3`
-  font-weight: 400;
-  font-size: 0.6rem;
-  margin: 0.5rem;
-  color: ${(p) => p.theme.alt};
 `;
 const Button = styled.button<{ displaySize?: boolean }>`
   background-color: ${(p) => (p.displaySize ? p.theme.alt : p.theme.secondary)};
