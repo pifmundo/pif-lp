@@ -87,7 +87,7 @@ const Section = styled.section<{ displaySize: boolean }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: ${(p) => (p.displaySize ? "110rem" : "40rem")};
+  height: ${(p) => (p.displaySize ? "115rem" : "40rem")};
   background-color: ${(p) => p.theme.primary};
   /* background-color: red; */
 `;
@@ -125,6 +125,7 @@ const Card = styled.div`
   }
 `;
 const Title = styled.h1`
+  font-family: "DM Sans", sans-serif;
   text-align: center;
   margin: 1.5rem 0 2.5rem 0;
   font-weight: 700;
@@ -146,6 +147,9 @@ const Benefit = styled.li<{ mark?: boolean }>`
   color: ${(p) => (p.mark ? p.theme.alt : p.theme.main)};
 `;
 const Button = styled.button<{ displaySize?: boolean }>`
+  //use a fonte DM Sans
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
   background-color: ${(p) => (p.displaySize ? p.theme.alt : p.theme.secondary)};
   color: ${(p) => p.theme.primary};
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
@@ -153,7 +157,6 @@ const Button = styled.button<{ displaySize?: boolean }>`
   border-radius: 0.5rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: 1rem;
-  font-weight: 700;
   width: 100%;
   height: 3rem;
   margin: 0;
