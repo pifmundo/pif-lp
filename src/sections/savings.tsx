@@ -42,9 +42,9 @@ const Savings = () => {
         Com a midas, você <mark>ECONOMIZA</mark>
       </h2>
       <div>
-        <h2>
-          <mark>
-            {counterOn && (
+        {counterOn && (
+          <h2>
+            <mark>
               <>
                 R${" "}
                 <CountUp
@@ -59,10 +59,10 @@ const Savings = () => {
                   onStart={() => setFont(false)}
                 />
               </>
-            )}
-          </mark>
-          {" um designer"}
-        </h2>
+            </mark>
+            {" um designer"}
+          </h2>
+        )}
         {counter > 0 && (
           <h2>
             <mark>
@@ -153,9 +153,8 @@ const Savings = () => {
   );
 };
 const Section = styled.section<{ isNonMobileScreen: boolean }>`
-  padding: 10rem 0 0 0;
   background-color: ${(p) => p.theme.primary};
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;

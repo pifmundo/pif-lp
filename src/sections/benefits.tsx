@@ -51,7 +51,7 @@ const Benefits = () => {
   );
 };
 const Wrapper = styled.div`
-  height: 45rem;
+  height: 15rem;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   padding: 1rem;
 `;
 const BenefitCard = styled.div<{ displaySize: Boolean }>`
-  height: 15rem;
+  height: 90%;
   // width: ${({ displaySize = true }) => (displaySize ? "10%" : "80%")};
   width: 10rem;
   background-color: ${(p) => p.theme.secondary};
