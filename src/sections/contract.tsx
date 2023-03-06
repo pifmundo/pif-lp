@@ -14,12 +14,13 @@ const contract = () => {
               O plano básico para o crescimento de uma empresa, um plano enxuto,
               com os principais benefícios
             </Description>
-            <Benefit>Até 3 landing pages</Benefit>
-            <Benefit>Analytics e teste A/B para otimização</Benefit>
-            <Benefit>Analytics e teste A/B para otimização</Benefit>
-            <Benefit>Analytics e teste A/B para otimização</Benefit>
+            <Benefit mark>Landing page</Benefit>
+            <Benefit>Análise e planejamento de marketing digital</Benefit>
+            <Benefit>Estratégias de marketing de conteúdo</Benefit>
+            <Benefit>Otimização de mecanismos de busca(SEO)</Benefit>
             <Benefit>
-              Suporte em até 12 horas via whatsapp de um dos nossos conselheiros
+              Relatórios e apresentações de resultados mensais e recomendações
+              para melhoria contínua
             </Benefit>
           </List>
           <Button
@@ -37,17 +38,9 @@ const contract = () => {
               suporte personalizado e mais recursos para suas campanhas de
               marketing online.
             </Description>
-            <Benefit mark>Lançamento de produto incluso</Benefit>
-            <Benefit>
-              Suporte prioritário em até 6 horas via whatsapp de um dos nossos
-              conselheiros
-            </Benefit>
-            <Benefit>Analytics avançado e aplicação de testes A/B</Benefit>
-            <Benefit>Dedicated account manager</Benefit>
-            <Benefit>Personalized strategy development</Benefit>
-            <Benefit>
-              Priority support with a turnaround time of six hours or less
-            </Benefit>
+            <Benefit mark>Todos os benefícios do Midas Growth</Benefit>
+            <Benefit mark>Para investimentos a partir de 10 mil reais</Benefit>
+            <Benefit>Suporte VIP via whatsapp de um de nossos conselheiros</Benefit>
           </List>
           <Button
             onClick={() => Router.push("https://wa.link/ifyvwo")}
@@ -58,18 +51,16 @@ const contract = () => {
         </Card>
         <Card>
           <List>
-            <Title>Midas Elite</Title>
+            <Title>Midas Launch</Title>
             <Description>
-              O Plano Elite é a opção mais completa para empresas que procuram
-              um suporte personalizado e sob medida. Com todos os recursos do
-              Plano Premium, além de design e desenvolvimento personalizados.
+              Um plano personalizado para quem quer lançar serviços,
+              treinamentos ou produtos no mercado
             </Description>
-            <Benefit mark>Lançamentos e landing pages ilimitadas</Benefit>
-            <Benefit mark>Cliente único</Benefit>
-            <Benefit>Inclui todos os benefícios do Midas Pro</Benefit>
-            <Benefit>Design e desenvolvimento customizados à demanda</Benefit>
+            <Benefit mark>Tráfego para lançamento</Benefit>
+            <Benefit>Assessoria completa direcionada para lançamentos</Benefit>
+            <Benefit>Estratégias de marketing de conteúdo</Benefit>
+            <Benefit>Sites necessários para seu lançamento</Benefit>
             <Benefit>Suporte personalizado</Benefit>
-            <Benefit>Estratégia de marketing unica para cada case</Benefit>
           </List>
           <Button
             onClick={() => Router.push("https://wa.link/ifyvwo")}
