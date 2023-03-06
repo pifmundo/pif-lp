@@ -14,11 +14,6 @@ const roboto = Roboto({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>Midas </title>
-        <meta name="format-detection" content="telephone=no"/>
-        <meta name="description" content="Midas é uma agência de marketing especializada em lançamentos e conteúdo digital."/>
-      </Head>
       <main className={roboto.className}>
         <GlobalStyle />
         <Component {...pageProps} />

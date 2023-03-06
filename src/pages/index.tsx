@@ -17,7 +17,7 @@ import React from "react";
 const darkTheme = {
   primary: "#000",
   secondary: "#fff",
-  main: "#555",
+  main: "#888",
   text: "#fff",
   alt: "#fddd00",
 };
@@ -31,15 +31,9 @@ const lightTheme = {
 };
 
 export default function Home() {
-  const [selectedTheme, setSelectedTheme] = useState(darkTheme);
-  const isNonMobileScreen = useMediaQuery("(min-width: 768px");
-
-  const themeSwitch = () => {
-    setSelectedTheme(selectedTheme === lightTheme ? darkTheme : lightTheme);
-  };
   return (
     <>
-      <ThemeProvider theme={selectedTheme}>
+      <ThemeProvider theme={darkTheme}>
         <Header />
         <Banner />
         {/* <Diagonal /> */}

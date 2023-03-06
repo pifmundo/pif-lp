@@ -32,11 +32,13 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-            rel="stylesheet"
+          <title>Midas </title>
+          <meta name="format-detection" content="telephone=no" />
+          <meta
+            name="description"
+            content="Midas é uma agência de marketing especializada em lançamentos e conteúdo digital."
           />
-          <meta name="format-detection" content="telephone=no"></meta>
+          <link rel="canonical" href="https://midasltda.co/" />
         </Head>
         <body>
           <Main />
