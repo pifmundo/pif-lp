@@ -22,17 +22,17 @@ const Banner = () => {
         </BrandDescription>
       </TextWrapper>
       <ButtonWrapper displaySize={ScreenSizeBool}>
-        <WhiteButton onClick={(_) => Router.push("/#benefits")}>
+        <WhiteButton onClick={() => Router.push("/#benefits")}>
           Conheça a Midas
         </WhiteButton>
-        <ColoredButton onClick={(_) => Router.push("https://wa.link/ifyvwo")}>
+        <ColoredButton onClick={() => Router.push("https://wa.link/ifyvwo")}>
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
     </Section>
   );
 };
-const Section = styled.section`
+const Section = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -65,10 +65,12 @@ const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   background-clip: text;
   -webkit-background-clip: text;
 
+  will-change: transform, opacity;
+  color: #ffffff;
+
   //animate
   animation: textGradient 6s ${({ animationDelay = 0 }) => animationDelay}
     ease-in-out infinite;
-  -webkit-text-fill-color: ${(p) => p.theme.text};
   @keyframes textGradient {
     0% {
       background-position: 0% 50%;
@@ -99,7 +101,7 @@ const BrandDescription = styled.p<{ displaySize: boolean }>`
 
 const ButtonWrapper = styled.div<{ displaySize: boolean }>`
   display: flex;
-  flex-direction: ${({ displaySize = false }) =>
+  flex-direction: ${({ displaySize = true }) =>
     displaySize ? "row" : "column"};
   justify-content: center;
   align-items: center;
@@ -109,7 +111,7 @@ const ButtonWrapper = styled.div<{ displaySize: boolean }>`
 
 const WhiteButton = styled.button`
   height: 3.4rem;
-
+  padding: 0;
   width: 100%;
 
   margin: 1rem;
@@ -127,10 +129,9 @@ const WhiteButton = styled.button`
   }
 `;
 const ColoredButton = styled.button`
+  padding: 0;
   height: 3.4rem;
-
   width: 100%;
-
   margin: 1rem;
   color: ${(p) => p.theme.text};
   font-weight: 600;
@@ -141,7 +142,6 @@ const ColoredButton = styled.button`
   box-shadow: 0 0 0.8rem #fddd00, 0 0 1.3rem #ea5308,
     0 0 1.5rem rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
-  background-image: none;
   background-color: ${(p) => p.theme.primary};
   transition: all 0.5s ease-in-out;
   &:hover {
@@ -150,17 +150,6 @@ const ColoredButton = styled.button`
     //animate gradient
     background-size: 400% 400%;
     background-color: #fddd00;
-
-    background-image: conic-gradient(
-      rgba(253, 221, 0, 0.5),
-      rgba(253, 221, 0, 0.5),
-      rgba(228, 117, 5, 0.5),
-      rgba(228, 117, 5, 0.5),
-      rgba(253, 221, 0, 0.5),
-      rgba(228, 117, 5, 0.5),
-      rgba(253, 221, 0, 0.5)
-    );
-    animation: gradient 40s ease-in-out alternate infinite;
     /* animation: hot 20s forwards; */
   }
   @keyframes gradient {

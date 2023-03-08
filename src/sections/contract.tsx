@@ -128,12 +128,12 @@ const Description = styled.p`
   font-size: 0.9rem;
   font-weight: 400;
 `;
-const List = styled.ul`
+const List = styled.div`
   color: ${(p) => p.theme.main};
   font-size: 0.9rem;
   font-weight: 500;
 `;
-const Benefit = styled.li<{ mark?: boolean }>`
+const Benefit = styled.div<{ mark?: boolean }>`
   margin: 1rem 0 1rem 0;
   color: ${(p) => (p.mark ? p.theme.alt : p.theme.main)};
 `;
