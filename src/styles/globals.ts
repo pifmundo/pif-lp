@@ -46,4 +46,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.gtm {
+    overflow: hidden;
+}
 `;
