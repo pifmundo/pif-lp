@@ -17,7 +17,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <main className={roboto.className}>
         <GlobalStyle />
         <Component {...pageProps} />
-        {/* <Analytics id="G-2JQZQZJZ2G" /> */}
         <Analytics />
       </main>
     </>

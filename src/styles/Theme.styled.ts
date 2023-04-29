@@ -2,7 +2,7 @@ export const light = {
     name: 'light',
     colors: {
         primary: '#000',
-        secondary: '#fff',
+        secondary: '#faf7f6',
         text: '#000',
         main: '#666',
         accent: '#fddd00',
@@ -11,9 +11,9 @@ export const light = {
 export const dark = {
     name: 'dark',
     colors: {
-        primary: '#fff',
+        primary: '#faf7f6',
         secondary: '#000',
-        text: '#fff',
+        text: '#faf7f6',
         main: '#bbb',
         accent: '#fddd00',
     }

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CountUp from "react-countup";
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@/components/useMediaQuery";
 
 const Savings = () => {
   const [counterOn, setCounterOn] = useState(false);
@@ -16,7 +16,7 @@ const Savings = () => {
 
   const [font, setFont] = useState(false);
 
-  const isNonMobileScreen = useMediaQuery("(min-width: 768px)");
+  const isNonMobileScreen = useMediaQuery(1100);
 
   const ref = useRef(null);
 
@@ -32,8 +32,7 @@ const Savings = () => {
       });
     });
     ref.current && observer.observe(ref.current); //oh god how I hate html elements
-    return () =>
-      (ref.current && observer.unobserve(ref.current)) || console.log("fail");
+    return () => (ref.current && observer.unobserve(ref.current)) || undefined;
   }, []);
 
   return (
@@ -154,7 +153,7 @@ const Savings = () => {
 };
 const Section = styled.section<{ isNonMobileScreen: boolean }>`
   background-color: ${(p) => p.theme.primary};
-  height: 80vh;
+  min-height: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -194,7 +193,7 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
   }
 `;
 const Price = styled.h1`
-  font-size: 5rem;
+  font-size: 4.8rem;
   display: flex;
 `;
 

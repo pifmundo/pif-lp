@@ -38,7 +38,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
-          <meta name="format-detection" content="telephone=no" />
+          <meta charSet="utf-8" />
+          <meta name="theme-color" content="#000" />
           <meta
             name="description"
             content="Midas é uma agência de marketing especializada em lançamentos e conteúdo digital."

@@ -19,8 +19,7 @@ const Section = styled.section`
   align-items: center;
   background-color: ${(p) => p.theme.alt};
   height: 12rem;
-  h1 {
-  }
+  gap: 1rem;
   h2 {
     font-weight: 500;
     font-size: 0.8rem;

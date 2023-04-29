@@ -1,12 +1,13 @@
-import { useMediaQuery } from "@mui/material";
 import Router from "next/router";
 import styled from "styled-components";
+import { useMediaQuery } from "@/components/useMediaQuery";
 
 const contract = () => {
-  const displaySize = useMediaQuery("(max-width: 1100px)");
+  const isNonMobileScreen = useMediaQuery(1100);
+
   return (
-    <Section id="contract" displaySize={displaySize}>
-      <Wrapper displaySize={displaySize}>
+    <Section id="contract" isNonMobileScreen={isNonMobileScreen}>
+      <Wrapper isNonMobileScreen={isNonMobileScreen}>
         <Card>
           <List>
             <Title>Midas Growth</Title>
@@ -25,7 +26,7 @@ const contract = () => {
           </List>
           <Button
             onClick={() => Router.push("https://wa.link/ifyvwo")}
-            displaySize={displaySize}
+            isNonMobileScreen={isNonMobileScreen}
           >
             Contratar
           </Button>
@@ -40,11 +41,13 @@ const contract = () => {
             </Description>
             <Benefit mark>Todos os benefícios do Midas Growth</Benefit>
             <Benefit mark>Para investimentos a partir de 10 mil reais</Benefit>
-            <Benefit>Suporte VIP via whatsapp de um de nossos conselheiros</Benefit>
+            <Benefit>
+              Suporte VIP via whatsapp de um de nossos conselheiros
+            </Benefit>
           </List>
           <Button
             onClick={() => Router.push("https://wa.link/ifyvwo")}
-            displaySize={displaySize}
+            isNonMobileScreen={isNonMobileScreen}
           >
             Contratar
           </Button>
@@ -64,7 +67,7 @@ const contract = () => {
           </List>
           <Button
             onClick={() => Router.push("https://wa.link/ifyvwo")}
-            displaySize={displaySize}
+            isNonMobileScreen={isNonMobileScreen}
           >
             Contratar
           </Button>
@@ -73,20 +76,20 @@ const contract = () => {
     </Section>
   );
 };
-const Section = styled.section<{ displaySize: boolean }>`
+const Section = styled.section<{ isNonMobileScreen: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: ${(p) => (p.displaySize ? "115rem" : "40rem")};
+  height: ${(p) => (p.isNonMobileScreen ? "115rem" : "40rem")};
   background-color: ${(p) => p.theme.primary};
   /* background-color: red; */
 `;
-const Wrapper = styled.div<{ displaySize: boolean }>`
+const Wrapper = styled.div<{ isNonMobileScreen: boolean }>`
   height: 100%;
   max-width: 80rem;
   display: flex;
-  flex-direction: ${(p) => (p.displaySize ? "column" : "row")};
+  flex-direction: ${(p) => (p.isNonMobileScreen ? "column" : "row")};
   justify-content: center;
   align-items: center;
 `;
@@ -137,11 +140,12 @@ const Benefit = styled.div<{ mark?: boolean }>`
   margin: 1rem 0 1rem 0;
   color: ${(p) => (p.mark ? p.theme.alt : p.theme.main)};
 `;
-const Button = styled.button<{ displaySize?: boolean }>`
+const Button = styled.button<{ isNonMobileScreen?: boolean }>`
   //use a fonte DM Sans
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
-  background-color: ${(p) => (p.displaySize ? p.theme.alt : p.theme.secondary)};
+  background-color: ${(p) =>
+    p.isNonMobileScreen ? p.theme.alt : p.theme.secondary};
   color: ${(p) => p.theme.primary};
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
   border: none;

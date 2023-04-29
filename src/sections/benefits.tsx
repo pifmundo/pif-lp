@@ -51,13 +51,11 @@ const Benefits = () => {
   );
 };
 const Wrapper = styled.div`
-  height: 15rem;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
 `;
 const BenefitCard = styled.div<{ displaySize: Boolean }>`
   height: 90%;

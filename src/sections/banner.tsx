@@ -1,27 +1,27 @@
 import Router from "next/router";
-import React from "react";
 import styled from "styled-components";
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@/components/useMediaQuery";
 
 const Banner = () => {
-  const ScreenSizeBool = useMediaQuery("(min-width: 1100px)");
+  const isNonMobileScreen = useMediaQuery(1100);
+
   return (
     <Section>
       <TextWrapper>
-        <Text displaySize={ScreenSizeBool} animationDelay={"0s"}>
+        <Text displaySize={isNonMobileScreen} animationDelay={"0s"}>
           Transforme.
         </Text>
-        <Text displaySize={ScreenSizeBool} animationDelay={"2s"}>
+        <Text displaySize={isNonMobileScreen} animationDelay={"2s"}>
           Otimize.
         </Text>
-        <Text displaySize={ScreenSizeBool} animationDelay={"4s"}>
+        <Text displaySize={isNonMobileScreen} animationDelay={"4s"}>
           Cresça.
         </Text>
-        <BrandDescription displaySize={ScreenSizeBool}>
+        <BrandDescription displaySize={isNonMobileScreen}>
           Transforme sua empresa com o toque de Midas.
         </BrandDescription>
       </TextWrapper>
-      <ButtonWrapper displaySize={ScreenSizeBool}>
+      <ButtonWrapper displaySize={isNonMobileScreen}>
         <WhiteButton onClick={() => Router.push("/#benefits")}>
           Conheça a Midas
         </WhiteButton>
@@ -33,28 +33,25 @@ const Banner = () => {
   );
 };
 const Section = styled.div`
-  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: start;
   flex-direction: column;
   background-color: ${(p) => p.theme.primary};
+  padding: 5rem 0;
 `;
 const TextWrapper = styled.div`
-  max-height: 85vw;
-  height: 34rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   width: 100%;
-  font-size: ${({ displaySize = true }) => (displaySize ? "7.5rem" : "17vw")};
+  font-size: ${({ displaySize = true }) =>
+    displaySize ? "calc(6vw + 6vh)" : "16vw"};
   text-align: center;
   font-weight: 700;
-  height: 25vw;
-  max-height: 26vh;
   /* max-height: 15vw; */
   background: linear-gradient(
     48deg,
@@ -62,11 +59,11 @@ const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
     rgba(253, 221, 0, 1) 50%,
     rgba(228, 117, 5, 1) 90%
   );
+  will-change: background-position;
   background-clip: text;
   -webkit-background-clip: text;
 
-  will-change: transform, opacity;
-  color: #ffffff;
+  color: ${(p) => p.theme.text};
 
   //animate
   animation: textGradient 6s ${({ animationDelay = 0 }) => animationDelay}
@@ -96,7 +93,7 @@ const BrandDescription = styled.p<{ displaySize: boolean }>`
   font-weight: 400;
   font-size: ${({ displaySize = true }) => (displaySize ? "1.4rem" : "5vw")};
   width: 95%;
-  margin: 2rem;
+  margin: 2rem 0;
 `;
 
 const ButtonWrapper = styled.div<{ displaySize: boolean }>`

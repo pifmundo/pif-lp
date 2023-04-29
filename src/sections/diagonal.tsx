@@ -1,9 +1,15 @@
-import { useMediaQuery } from "@mui/material";
 import styled from "styled-components";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const Diagonal = () => {
-  const isNonMobileScreen = useMediaQuery("(min-width: 768px");
+  const [isNonMobileScreen, setIsNonMobileScreen] = useState(false);
+
+  useEffect(() => {
+    setIsNonMobileScreen(window.innerWidth > 1100);
+  }, []);
+  
   const picturePath = "/JF.jpg";
   return (
     <Section isNonMobileScreen={isNonMobileScreen}>

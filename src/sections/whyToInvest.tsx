@@ -1,24 +1,28 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "react-responsive";
 import { useEffect, useRef, useState } from "react";
 
 const WhyToInvest = () => {
   const graphPath = "/graph.svg";
-  const displaySize = useMediaQuery("(min-width: 768px)");
+  const [isNonMobileScreen, setIsNonMobileScreen] = useState(false);
+
+  useEffect(() => {
+    setIsNonMobileScreen(window.innerWidth > 1100);
+  }, []);
 
   return (
-    <Wrapper displaySize={displaySize}>
+    <Wrapper isNonMobileScreen={isNonMobileScreen}>
       <h1>Crescimento</h1>
       <h2>Cresça o faturamento de sua empresa junto de quem sabe.</h2>
       <div>
-        <Image fill src={graphPath} alt={""}/>
+        <Image fill src={graphPath} alt={""} />
         {<div />}
       </div>
     </Wrapper>
   );
 };
-const Wrapper = styled.div<{ displaySize: boolean }>`
+const Wrapper = styled.div<{ isNonMobileScreen: boolean }>`
   padding: 2rem 0 2rem 0;
   scroll-snap-align: start;
   height: 50rem;
