@@ -16,8 +16,6 @@ const darkTheme = {
 };
 
 export default function Home() {
-  console.log("api key: ", process.env.API_KEY);
-  console.log("server prefix: ", process.env.SERVER_PREFIX);
   return (
     <>
       <Head>
