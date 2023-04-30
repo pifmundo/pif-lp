@@ -12,17 +12,29 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const body = JSON.parse(req.body);
 
-  const { firstName, lastName, email, telephone } = body;
+  const { firstName, lastName, email, telephone, address } = body;
 
-  const response = mailchimp.lists.addListMember(listId, {
-    email_address: email,
-    status: "subscribed",
-    merge_fields: {
-      FNAME: firstName,
-      LNAME: lastName,
-      PHONE: telephone,
+  const response = mailchimp.lists.addListMember(
+    listId,
+    {
+      email_address: email,
+      status: "subscribed",
+      merge_fields: {
+        FNAME: firstName,
+        LNAME: lastName,
+        PHONE: telephone,
+        ADDRESS: {
+            addr1: address,
+            city: "London",
+            state: "London",
+            zip: "W1W 6AB",
+        },
+      },
     },
-  });
+    {
+      skipMergeValidation: true,
+    }
+  );
 
   res.status(200);
 }

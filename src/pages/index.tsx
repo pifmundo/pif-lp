@@ -2,10 +2,10 @@ import Header from "@/components/Header";
 import Banner from "@/sections/banner";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
-import Email from "@/sections/email";
 import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
 import React from "react";
+import TypeForm from "@/sections/typeform";
 
 const darkTheme = {
   primary: "#000",
@@ -26,7 +26,9 @@ export default function Home() {
         <Banner />
         <Savings />
         {/* <Contract /> */}
-        <Email />
+        {/* <Benefits /> */}
+        {/* <Email /> */}
+        <TypeForm />
         <Footer />
       </ThemeProvider>
     </>

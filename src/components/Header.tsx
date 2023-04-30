@@ -15,7 +15,7 @@ const Header = () => {
             Vantagens
           </NavLink>
           <NavLink padding="1rem" to="#email">
-            Entre em contato
+            Contato
           </NavLink>
         </NavLinkWrapper>
       )}

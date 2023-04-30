@@ -25,7 +25,7 @@ const Banner = () => {
         <WhiteButton onClick={() => Router.push("/#benefits")}>
           Conheça a Midas
         </WhiteButton>
-        <ColoredButton onClick={() => Router.push("https://wa.link/ifyvwo")}>
+        <ColoredButton onClick={() => Router.push("/#email")}>
           Alavanque seu negócio
         </ColoredButton>
       </ButtonWrapper>
@@ -33,13 +33,17 @@ const Banner = () => {
   );
 };
 const Section = styled.div`
+  font-family: "Gotham", sans-serif;
+  button {
+    font-family: "Gotham", sans-serif;
+  }
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: start;
   flex-direction: column;
   background-color: ${(p) => p.theme.primary};
-  padding: 5rem 0;
+  padding: 3rem 0 6rem 0;
 `;
 const TextWrapper = styled.div`
   display: flex;

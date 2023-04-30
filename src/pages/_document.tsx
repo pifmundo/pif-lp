@@ -44,6 +44,12 @@ export default class MyDocument extends Document {
             name="description"
             content="Midas é uma agência de marketing especializada em lançamentos e conteúdo digital."
           />
+          <link
+            href="https://fonts.cdnfonts.com/css/gotham"
+            rel="preload"
+            as="font"
+          />
+
           <link rel="canonical" href="https://midasltda.co/" />
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

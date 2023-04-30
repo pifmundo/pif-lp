@@ -152,6 +152,7 @@ const Savings = () => {
   );
 };
 const Section = styled.section<{ isNonMobileScreen: boolean }>`
+  font-family: "Gotham", sans-serif;
   background-color: ${(p) => p.theme.primary};
   min-height: 700px;
   width: 100%;
@@ -165,7 +166,7 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
   }
   h1 {
     margin: 0;
-    font-size: ${(p) => (p.isNonMobileScreen ? "7.2rem" : "16.6vw")};
+    font-size: ${(p) => (p.isNonMobileScreen ? "7rem" : "15vw")};
     color: ${(p) => p.theme.text};
   }
   h2 {

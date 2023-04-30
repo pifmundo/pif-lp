@@ -44,8 +44,6 @@ const Email = () => {
   const server = "us21";
   const audienceId = "74ac3b31a6";
 
-  const url = `https://${server}.api.mailchimp.com/3.0/lists/${audienceId}/members`;
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -164,11 +162,11 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
+  max-width: 740px;
   margin: 2rem auto;
   border-radius: 2rem;
   padding: 2rem 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Gotham", sans-serif;
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -206,7 +204,7 @@ const Section = styled.section`
     border: none;
     background: linear-gradient(40deg, #1d1d1e 0%, #1a1a1d 100%);
     color: #faf7f6;
-    font-family: "Poppins", sans-serif;
+    font-family: "Gotham", sans-serif;
     font-weight: 600;
     text-decoration-color: #fddd00;
     :focus {
