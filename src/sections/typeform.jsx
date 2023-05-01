@@ -73,9 +73,7 @@ const TypeForm = () => {
           <>
             <div className="social">
               <button
-                style={{
-                  backgroundColor: "#faf7f6",
-                }}
+                className="white"
                 onClick={() =>
                   Router.push("https://www.instagram.com/midasads/")
                 }
@@ -89,9 +87,7 @@ const TypeForm = () => {
                 Siga-nos
               </button>
               <button
-                style={{
-                  backgroundColor: "#fddd00",
-                }}
+                className="yellow"
                 onClick={() => Router.push("https://wa.link/ifyvwo")}
               >
                 <Image
@@ -157,6 +153,23 @@ const Section = styled.section`
       border-radius: 2rem;
       color: #000;
     }
+    .yellow, .white {
+      background-color: #faf7f6;
+      border-bottom: 8px inset #fddd00;
+      border-right: 8px inset #fddd00;
+      &:hover {
+        border: none;
+      }
+    }
+    /* .yellow {
+      background-color: #fddd00;
+      box-shadow: 0 10px 10px #0008;
+      border-bottom: 5px inset #faf7f6;
+      border-right: 5px inset #faf7f6;
+      &:hover {
+        border: none;
+      }
+    } */
   }
   .wrapper {
     h1 {
