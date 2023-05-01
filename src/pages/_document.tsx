@@ -45,8 +45,8 @@ export default class MyDocument extends Document {
             content="Midas é uma agência de marketing especializada em lançamentos e conteúdo digital."
           />
           <link
+            rel="stylesheet"
             href="https://fonts.cdnfonts.com/css/gotham"
-            rel="preload"
             as="font"
           />
 

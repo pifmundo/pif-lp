@@ -112,11 +112,13 @@ const TypeForm = () => {
 
 const Section = styled.section`
   h1 {
-    font-size: 2.5rem;
-    max-width: 500px;
+    font-size: 2rem;
+    width: 500px;
+    max-width: 90vw;
     span {
+      font-family: "Gotham", sans-serif;
       color: #fddd00;
-      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: black;
       &:hover {
         color: #faf7f6;
@@ -156,14 +158,6 @@ const Section = styled.section`
       color: #000;
     }
   }
-  ::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: red;
-    z-index: 1;
-  }
   .wrapper {
     h1 {
       color: ${(props) => (props.done ? "#000" : "#fddd00")};
@@ -181,6 +175,7 @@ const Section = styled.section`
     border: 3px solid #000;
     box-shadow: 0 10px 10px #0008;
     padding: calc(10px + 1vw);
+    padding-top: 20px;
   }
   .inputWrapper {
     display: flex;
