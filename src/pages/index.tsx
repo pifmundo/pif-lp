@@ -6,6 +6,8 @@ import Savings from "@/sections/savings";
 import Footer from "@/sections/footer";
 import React from "react";
 import TypeForm from "@/sections/typeform";
+import Testimonials from "@/sections/testimonials";
+import Benefits from "@/sections/benefits";
 
 const darkTheme = {
   primary: "#000",
@@ -26,8 +28,9 @@ export default function Home() {
         <Banner />
         <Savings />
         {/* <Contract /> */}
-        {/* <Benefits /> */}
         {/* <Email /> */}
+        <Testimonials />
+        <Benefits />
         <TypeForm />
         <Footer />
       </ThemeProvider>

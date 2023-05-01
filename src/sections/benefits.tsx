@@ -3,91 +3,78 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const Benefits = () => {
-  const isNonMobileScreen = useMediaQuery(1000);
-  const imageSize = 100;
   return (
-    <Wrapper isNonMobileScreen={isNonMobileScreen}>
-      <h1>Benefícios</h1>
-      <div className="benefitsContainer">
-        <div className="benefit">
-          <h3>Marketing eficiente</h3>
-          <Image
-            src="/target.png"
-            alt="alvo"
-            width={imageSize}
-            height={imageSize}
-          />
+    <Section>
+      <div className="wrapper">
+        <h1>Benefícios</h1>
+        <div className="article">
+          <h2>Lorem Ipsum</h2>
           <p>
-            você consegue gastar menos para atingir o público mais qualificado
-            para comprar o seu produto
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            dignissimos facilis animi facere tenetur excepturi cupiditate error
+            commodi perspiciatis sint aperiam laudantium, recusandae at qui non
+            mollitia ab accusamus quae.
           </p>
         </div>
-        <div className="benefit">
-          <h3>Maior alcance</h3>
-          <Image
-            src="/target.png"
-            alt="alvo"
-            width={imageSize}
-            height={imageSize}
-          />
+        <div className="invertedArticle">
+          <h2>Lorem Ipsum</h2>
           <p>
-            Criamos toda sua estratégia de vendas, onde usamos as maneiras mais
-            eficazes para converter o máximo de clientes
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            dignissimos facilis animi facere tenetur excepturi cupiditate error
+            commodi perspiciatis sint aperiam laudantium, recusandae at qui non
+            mollitia ab accusamus quae.
           </p>
         </div>
-        <div className="benefit">
-          <h3>Treinamos sua equipe de vendas</h3>
-          <Image
-            src="/target.png"
-            alt="alvo"
-            width={imageSize}
-            height={imageSize}
-          />
+        <div className="article">
+          <h2>Lorem Ipsum</h2>
           <p>
-            Assim você converterá mais clientes tanto pelas redes sociais quanto
-            presencialmente.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            dignissimos facilis animi facere tenetur excepturi cupiditate error
+            commodi perspiciatis sint aperiam laudantium, recusandae at qui non
+            mollitia ab accusamus quae.
           </p>
         </div>
       </div>
-    </Wrapper>
+    </Section>
   );
 };
-const Wrapper = styled.div<{ isNonMobileScreen: boolean }>`
+
+const Section = styled.section`
+  font-family: "Gotham", sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 4rem 0;
-  outline: 1px dashed red;
-  div {
-    outline: 1px dashed blue;
-  }
-  font-family: "Gotham", sans-serif;
-  font-weight: 600;
-  width: 100%;
-  background: linear-gradient(48deg, #fddd00 0%, #ffdd00 100%);
-  .benefitsContainer {
-    align-items: center;
-    justify-content: center;
-    color: #faf7f6;
-    display: flex;
-    flex-direction: ${(p) => (p.isNonMobileScreen ? "row" : "column")};
-    width: 90vw;
-    max-width: 1000px;
-  }
-  .benefit {
+  color: #faf7f6;
+  padding: 2rem 0;
+  .wrapper {
+    text-align: center;
+    div {
+      text-align: start;
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    height: 250px;
-    background-color: #000;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 1rem;
+    width: 90vh;
+    max-width: 740px;
+    gap: 4rem;
+    p {
+      font-weight: 600;
+      width: 60%;
+    }
+    h2 {
+      font-weight: 700;
+    }
   }
-  img {
-    margin: 1rem;
+  .article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .invertedArticle {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
   }
 `;
 export default Benefits;
