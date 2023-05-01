@@ -34,7 +34,9 @@ const TypeForm = () => {
 
   return (
     <Section done={input} id={"email"}>
-      <h1>Se interessou? Conta pra a gente.</h1>
+      <h1>
+        Quer alavancar o seu negócio com a <span>MIDAS</span>? Responde aqui!
+      </h1>
       <div className="wrapper">
         <div className="textWrapper">
           <h1>{query}</h1>
@@ -78,7 +80,12 @@ const TypeForm = () => {
                   Router.push("https://www.instagram.com/midasads/")
                 }
               >
-                <Image alt="instagram" src="/instagram.png" width={20} height={20} />
+                <Image
+                  alt="instagram"
+                  src="/instagram.png"
+                  width={20}
+                  height={20}
+                />
                 Siga-nos
               </button>
               <button
@@ -87,7 +94,12 @@ const TypeForm = () => {
                 }}
                 onClick={() => Router.push("https://wa.link/ifyvwo")}
               >
-                <Image alt="whatsapp" src="/whatsapp.png" width={20} height={20} />
+                <Image
+                  alt="whatsapp"
+                  src="/whatsapp.png"
+                  width={20}
+                  height={20}
+                />
                 Entre em contato
               </button>
             </div>
@@ -101,6 +113,19 @@ const TypeForm = () => {
 const Section = styled.section`
   h1 {
     font-size: 2.5rem;
+    max-width: 500px;
+    span {
+      color: #fddd00;
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: black;
+      &:hover {
+        color: #faf7f6;
+        -webkit-text-stroke-width: 2px;
+      }
+    }
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
   }
   font-family: "Gotham", sans-serif;
   display: flex;
@@ -108,7 +133,7 @@ const Section = styled.section`
   gap: 4rem;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 800px;
   background-color: #faf7f6;
   .social {
     width: 100%;
@@ -148,7 +173,7 @@ const Section = styled.section`
     text-align: right;
     width: 80vw;
     max-width: 500px;
-    height: 50%;
+    height: 40%;
     justify-content: space-between;
     align-items: center;
     border-radius: 2rem;

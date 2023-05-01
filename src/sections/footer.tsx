@@ -21,19 +21,19 @@ const Section = styled.section`
   background-color: ${(p) => p.theme.alt};
   height: 12rem;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
   image {
     margin-bottom: 1rem;
   }
   h2 {
     font-weight: 500;
-    font-size: 0.7rem;
+    font-size: .7rem;
   }
   h3 {
     text-decoration: none;
     margin: 1rem 0 1rem 0;
     font-weight: 700;
-    font-size: 0.7rem;
+    font-size: .7rem;
   }
 `;
 export default Footer;
