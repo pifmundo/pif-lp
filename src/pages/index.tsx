@@ -29,8 +29,8 @@ export default function Home() {
         <Savings />
         {/* <Contract /> */}
         {/* <Email /> */}
-        <Testimonials />
-        <Benefits />
+        {/* <Testimonials /> */}
+        {/* <Benefits /> */}
         <TypeForm />
         <Footer />
       </ThemeProvider>

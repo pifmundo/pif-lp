@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import Script from "next/script";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -93,7 +94,9 @@ export default class MyDocument extends Document {
             sizes="180x180"
             href="/apple-touch-icon-180x180.png"
           />
-          <script
+          <Script
+            strategy="lazyOnload"
+            id="gtm-script"
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
