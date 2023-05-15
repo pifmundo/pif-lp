@@ -45,10 +45,11 @@ export default class MyDocument extends Document {
             name="description"
             content="Midas é uma agência de marketing especializada em lançamentos e conteúdo digital."
           />
-          <Script
-            src="https://fonts.cdnfonts.com/css/gotham"
-            strategy="lazyOnload"
-          />
+          {/* <link
+            rel="stylesheet"
+            href="https://fonts.cdnfonts.com/css/gotham"
+            as="font"
+          /> */}
 
           <link rel="canonical" href="https://midasltda.co/" />
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
