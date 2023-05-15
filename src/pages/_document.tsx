@@ -95,7 +95,7 @@ export default class MyDocument extends Document {
             href="/apple-touch-icon-180x180.png"
           />
           <Script
-            strategy="lazyOnload"
+            strategy="afterInteractive"
             id="gtm-script"
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
