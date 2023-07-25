@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <Section>
       <DarkLogo />
-      <h2>Telefone: (82)99954-2481 | E-mail: contato@midasltda.co</h2>
-      <h3>© 2023 Midas. Todos os direitos reservados.</h3>
+      <h2>Contato: contato@pifmundo.com</h2>
+      <h3>© 2023 Poupar Investir Frutificar. Todos os direitos reservados.</h3>
     </Section>
   );
 };

@@ -1,10 +1,9 @@
 import Image from "next/image";
 
 const Logo = () => {
-  const logoPath = "/midas.svg";
-  const darkLogoPath = "/midas-dark.svg";
+  const logoPath = "/logo-yellow.png";
 
-  return <Image width={50} height={50} src={logoPath} alt="Next.js Logo" />;
+  return <Image width={80} height={80} src={logoPath} alt="Next.js Logo" />;
 };
 
 export default Logo;

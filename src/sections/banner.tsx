@@ -9,24 +9,24 @@ const Banner = () => {
     <Section>
       <TextWrapper>
         <Text displaySize={isNonMobileScreen} animationDelay={"0s"}>
-          Transforme.
+          Poupar.
         </Text>
         <Text displaySize={isNonMobileScreen} animationDelay={"2s"}>
-          Otimize.
+          Investir.
         </Text>
         <Text displaySize={isNonMobileScreen} animationDelay={"4s"}>
-          Cresça.
+          Frutificar.
         </Text>
         <BrandDescription displaySize={isNonMobileScreen}>
-          Transforme sua empresa com o toque de Midas.
+          Transforme sua mente com o método PIF.
         </BrandDescription>
       </TextWrapper>
       <ButtonWrapper displaySize={isNonMobileScreen}>
         <WhiteButton onClick={() => Router.push("/#benefits")}>
-          Conheça a Midas
+          Conheça o método pif
         </WhiteButton>
         <ColoredButton onClick={() => Router.push("/#email")}>
-          Alavanque seu negócio
+          Seja um leão
         </ColoredButton>
       </ButtonWrapper>
     </Section>
@@ -59,9 +59,9 @@ const Text = styled.h1<{ displaySize: boolean; animationDelay: string }>`
   /* max-height: 15vw; */
   background: linear-gradient(
     48deg,
-    #ea5308 20%,
+    #ea5308 10%,
     rgba(253, 221, 0, 1) 50%,
-    rgba(228, 117, 5, 1) 90%
+    rgba(228, 117, 5, 1) 100%
   );
   will-change: background-position;
   background-clip: text;

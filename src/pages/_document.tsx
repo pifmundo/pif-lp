@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#000" />
           <meta
             name="description"
-            content="Midas é uma agência de marketing especializada em lançamentos e conteúdo digital."
+            content="Pif é uma empresa de educação financeira que tem como objetivo ajudar as pessoas a terem uma vida mais próspera."
           />
           {/* <link
             rel="stylesheet"
@@ -51,7 +51,7 @@ export default class MyDocument extends Document {
             as="font"
           /> */}
 
-          <link rel="canonical" href="https://midasltda.co/" />
+          <link rel="canonical" href="https://pifmundo.com/" />
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <link
@@ -94,7 +94,7 @@ export default class MyDocument extends Document {
             sizes="180x180"
             href="/apple-touch-icon-180x180.png"
           />
-          <Script
+          {/* <Script
             strategy="afterInteractive"
             id="gtm-script"
             dangerouslySetInnerHTML={{
@@ -104,15 +104,15 @@ export default class MyDocument extends Document {
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PFHZF5M');`,
             }}
-          />
+          /> */}
         </Head>
         <body>
-          <noscript
+          {/* <noscript
             dangerouslySetInnerHTML={{
               __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFHZF5M"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
             }}
-          />
+          /> */}
           <Main />
           <NextScript />
         </body>

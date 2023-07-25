@@ -30,8 +30,8 @@ export default function Home() {
         {/* <Contract /> */}
         {/* <Email /> */}
         {/* <Testimonials /> */}
-        {/* <Benefits /> */}
-        <TypeForm />
+        <Benefits />
+        {/* <TypeForm /> */}
         <Footer />
       </ThemeProvider>
     </>
